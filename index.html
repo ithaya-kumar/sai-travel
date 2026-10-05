@@ -83,9 +83,6 @@
       <div class="container hero__container">
 
         <div class="hero__left">
-          <div class="hero__eyebrow reveal-up">
-            <span class="eyebrow-line"></span> TRAVEL PORTFOLIO
-          </div>
           <h1 class="hero__heading reveal-up delay-1">
             TRAVEL.<br />DISCOVER.<br />LIVE.
           </h1>
@@ -93,45 +90,29 @@
             Discover the beauty, culture and stories<br/>behind every journey.
           </p>
           <div class="hero__buttons reveal-up delay-3">
-            <a href="#journey" class="btn btn--primary">EXPLORE JOURNEY <span>→</span></a>
+            <a href="#journey" class="btn btn--primary">EXPLORE JOURNEY</a>
             <a href="#destinations" class="btn btn--secondary">VIEW DESTINATIONS</a>
-          </div>
-
-          <!-- Vertical Scroll Indicator -->
-          <div class="hero__scroll reveal-fade delay-4">
-            <div class="scroll-icon">
-              <span class="scroll-dot"></span>
-            </div>
-            <span class="scroll-text">SCROLL DOWN</span>
           </div>
         </div>
 
         <div class="hero__right reveal-left delay-4">
-          <div class="hero__img-wrapper">
-            <img src="assets/images/hero_img.jpg"
-              alt="Temple Architecture" class="hero__img" />
-
-            <!-- Top Right Card -->
-            <div class="floating-card floating-card--top reveal-up delay-5">
-              <div class="floating-card__icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-              </div>
-              <div class="floating-card__content">
-                <span class="floating-card__title">EXPLORE INDIA</span>
-                <span class="floating-card__desc">Every street has a story.</span>
-              </div>
+          <div class="hero__img-wrapper" id="heroImageWrapper">
+            <div class="hero__img-inner" id="heroImageInner">
+              <img src="assets/images/hero_img.jpg"
+                alt="Temple Architecture" class="hero__img cinematic-zoom" fetchpriority="high" />
+              <div class="hero__img-overlay"></div>
             </div>
 
-            <!-- Bottom Left Card -->
-            <div class="floating-card floating-card--bottom reveal-up delay-5">
-              <img src="assets/images/hero_img.jpg" alt="Madurai" class="floating-card__thumb" />
-              <div class="floating-card__content">
-                <span class="floating-card__title">MADURAI</span>
-                <span class="floating-card__desc">Tamil Nadu, India</span>
-              </div>
-              <div class="floating-card__arrow">→</div>
+            <div class="hero__floating-card reveal-up delay-5">
+              <span class="card-eyebrow">EXPLORE INDIA</span>
+              <span class="card-title">Every street has a story.</span>
             </div>
           </div>
+        </div>
+
+        <!-- Floating Destination Indicator -->
+        <div class="hero__indicator reveal-fade delay-5">
+          <span class="indicator-text">EXPLORE<br /><strong>06 DESTINATIONS</strong></span>
         </div>
 
       </div>
