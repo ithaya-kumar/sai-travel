@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="WANDER — A premium travel portfolio showcasing beautiful journeys." />
+  <meta name="keywords" content="travel portfolio, India travel, travel photography, minimal" />
+  <title>WANDER — Premium Travel Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ============================================================
+       LOADING SCREEN
+       ============================================================ -->
+  <div id="loader" class="loader">
+    <div class="loader__inner">
+      <span class="loader__text">WANDER</span>
+      <div class="loader__bar-wrap">
+        <div class="loader__bar" id="loaderBar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       CUSTOM CURSOR
+       ============================================================ -->
+  <div class="cursor" id="cursor"></div>
+
+  <!-- ============================================================
+       NAVBAR
+       ============================================================ -->
+  <header class="navbar" id="navbar">
+    <div class="navbar__container container">
+      <a href="#home" class="navbar__logo">WANDER</a>
+
+      <nav class="navbar__nav">
+        <ul class="navbar__links">
+          <li><a href="#home" class="navbar__link">HOME</a></li>
+          <li><a href="#destinations" class="navbar__link">DESTINATIONS</a></li>
+          <li><a href="#journey" class="navbar__link">JOURNEYS</a></li>
+          <li><a href="#gallery" class="navbar__link">GALLERY</a></li>
+          <li><a href="#about" class="navbar__link">ABOUT</a></li>
+          <li><a href="#contact" class="navbar__link">CONTACT</a></li>
+        </ul>
+      </nav>
+
+      <button class="navbar__hamburger" id="hamburger" aria-label="Menu">
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <nav>
+      <ul class="mobile-menu__links">
+        <li><a href="#home" class="mobile-menu__link">HOME</a></li>
+        <li><a href="#destinations" class="mobile-menu__link">DESTINATIONS</a></li>
+        <li><a href="#journey" class="mobile-menu__link">JOURNEYS</a></li>
+        <li><a href="#gallery" class="mobile-menu__link">GALLERY</a></li>
+        <li><a href="#about" class="mobile-menu__link">ABOUT</a></li>
+        <li><a href="#contact" class="mobile-menu__link">CONTACT</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main>
+    <!-- ============================================================
+         HERO SECTION
+         ============================================================ -->
+    <section id="home" class="hero">
+      <div class="container hero__container">
+        
+        <div class="hero__left">
+          <h1 class="hero__heading reveal-up delay-1">
+            TRAVEL.<br/>DISCOVER.<br/>LIVE.
+          </h1>
+          <p class="hero__desc reveal-up delay-2">
+            Explore beautiful places, discover new experiences, and create memories that last forever.
+          </p>
+          <div class="hero__buttons reveal-up delay-3">
+            <a href="#journey" class="btn btn--primary">EXPLORE JOURNEY</a>
+            <a href="#destinations" class="btn btn--secondary">VIEW DESTINATIONS</a>
+          </div>
+        </div>
+
+        <div class="hero__right reveal-left delay-4">
+          <div class="hero__img-wrapper">
+            <img 
+              src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=1200&q=80&auto=format" 
+              alt="Beautiful architecture" 
+              class="hero__img" 
+            />
+            
+            <div class="hero__floating-card reveal-up delay-5">
+              <span class="card-eyebrow">NEXT DESTINATION</span>
+              <span class="card-title">KERALA</span>
+              <span class="card-icon">📍</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating Destination Indicator -->
+        <div class="hero__indicator reveal-fade delay-5">
+          <span class="indicator-text">EXPLORE<br/><strong>06 DESTINATIONS</strong></span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         DESTINATIONS SECTION
+         ============================================================ -->
+    <section id="destinations" class="destinations section-bg">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <h2 class="section-title">EXPLORE DESTINATIONS</h2>
+          <p class="section-subtitle">Places that turn journeys into memories.</p>
+        </div>
+
+        <div class="dest-grid">
+          <!-- Card 1 -->
+          <article class="dest-card reveal-up">
+            <div class="dest-card__img-wrap">
+              <img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=600&q=80" alt="Madurai" />
+            </div>
+            <div class="dest-card__body">
+              <span class="dest-card__loc">Tamil Nadu, India</span>
+              <h3 class="dest-card__title">MADURAI</h3>
+              <p class="dest-card__desc">The ancient city of temples and rich cultural heritage.</p>
+              <a href="#gallery" class="dest-card__btn">EXPLORE <span>→</span></a>
+            </div>
+          </article>
+          
+          <!-- Card 2 -->
+          <article class="dest-card reveal-up delay-1">
+            <div class="dest-card__img-wrap">
+              <img src="https://images.unsplash.com/photo-1609710228159-0fa9bd7c0827?w=600&q=80" alt="Rameswaram" />
+            </div>
+            <div class="dest-card__body">
+              <span class="dest-card__loc">Tamil Nadu, India</span>
+              <h3 class="dest-card__title">RAMESWARAM</h3>
+              <p class="dest-card__desc">A sacred island known for its iconic bridge and pristine waters.</p>
+              <a href="#gallery" class="dest-card__btn">EXPLORE <span>→</span></a>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="dest-card reveal-up delay-2">
+            <div class="dest-card__img-wrap">
+              <img src="https://images.unsplash.com/photo-1626015365107-e943e65cbb69?w=600&q=80" alt="Kanyakumari" />
+            </div>
+            <div class="dest-card__body">
+              <span class="dest-card__loc">Tamil Nadu, India</span>
+              <h3 class="dest-card__title">KANYAKUMARI</h3>
+              <p class="dest-card__desc">The southernmost tip where three beautiful oceans meet.</p>
+              <a href="#gallery" class="dest-card__btn">EXPLORE <span>→</span></a>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="dest-card reveal-up">
+            <div class="dest-card__img-wrap">
+              <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80" alt="Ooty" />
+            </div>
+            <div class="dest-card__body">
+              <span class="dest-card__loc">Tamil Nadu, India</span>
+              <h3 class="dest-card__title">OOTY</h3>
+              <p class="dest-card__desc">Rolling hills, tea gardens, and misty mountain mornings.</p>
+              <a href="#gallery" class="dest-card__btn">EXPLORE <span>→</span></a>
+            </div>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="dest-card reveal-up delay-1">
+            <div class="dest-card__img-wrap">
+              <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=600&q=80" alt="Kerala" />
+            </div>
+            <div class="dest-card__body">
+              <span class="dest-card__loc">Kerala, India</span>
+              <h3 class="dest-card__title">KERALA</h3>
+              <p class="dest-card__desc">Serene backwaters and lush green landscapes.</p>
+              <a href="#gallery" class="dest-card__btn">EXPLORE <span>→</span></a>
+            </div>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="dest-card reveal-up delay-2">
+            <div class="dest-card__img-wrap">
+              <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=600&q=80" alt="Goa" />
+            </div>
+            <div class="dest-card__body">
+              <span class="dest-card__loc">Goa, India</span>
+              <h3 class="dest-card__title">GOA</h3>
+              <p class="dest-card__desc">Golden beaches, beautiful sunsets, and endless coastlines.</p>
+              <a href="#gallery" class="dest-card__btn">EXPLORE <span>→</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FEATURED DESTINATION
+         ============================================================ -->
+    <section class="featured">
+      <div class="featured__bg">
+        <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1600&q=80" alt="Featured Kerala" class="parallax-img" />
+      </div>
+      <div class="container featured__container">
+        <div class="featured__card reveal-up">
+          <span class="featured__eyebrow">FEATURED JOURNEY</span>
+          <h2 class="featured__title">KERALA</h2>
+          <p class="featured__desc">"Where nature meets unforgettable moments."</p>
+          <a href="#contact" class="btn btn--primary">EXPLORE KERALA <span>→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         JOURNEY TIMELINE
+         ============================================================ -->
+    <section id="journey" class="journey section">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <h2 class="section-title">MY JOURNEY</h2>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline__line">
+            <div class="timeline__progress" id="timelineProgress"></div>
+          </div>
+          
+          <div class="timeline__items">
+            <div class="timeline__item reveal-up">
+              <div class="timeline__dot"></div>
+              <div class="timeline__content">
+                <span class="timeline__year">2024</span>
+                <h3 class="timeline__place">MADURAI</h3>
+              </div>
+            </div>
+            <div class="timeline__item reveal-up delay-1">
+              <div class="timeline__dot"></div>
+              <div class="timeline__content">
+                <span class="timeline__year">2025</span>
+                <h3 class="timeline__place">KERALA</h3>
+              </div>
+            </div>
+            <div class="timeline__item reveal-up delay-2">
+              <div class="timeline__dot"></div>
+              <div class="timeline__content">
+                <span class="timeline__year">2025</span>
+                <h3 class="timeline__place">GOA</h3>
+              </div>
+            </div>
+            <div class="timeline__item reveal-up delay-3">
+              <div class="timeline__dot"></div>
+              <div class="timeline__content">
+                <span class="timeline__year">2026</span>
+                <h3 class="timeline__place">KANYAKUMARI</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         TRAVEL STORIES
+         ============================================================ -->
+    <section id="stories" class="stories section-bg">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <h2 class="section-title">TRAVEL STORIES</h2>
+        </div>
+
+        <div class="stories__grid">
+          <article class="story-card story-card--large reveal-up">
+            <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&q=80" alt="Sunset" class="story-card__img" />
+            <div class="story-card__body">
+              <span class="story-card__meta">COASTAL • MARCH 2026</span>
+              <h3 class="story-card__title">Chasing the Sunset</h3>
+              <p class="story-card__desc">A journey to the edge of the continent to witness nature's finest colors.</p>
+              <a href="#" class="story-card__link">READ STORY <span>→</span></a>
+            </div>
+          </article>
+
+          <div class="stories__side">
+            <article class="story-card story-card--small reveal-up delay-1">
+              <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80" alt="Mountains" class="story-card__img" />
+              <div class="story-card__body">
+                <span class="story-card__meta">NATURE • JAN 2025</span>
+                <h3 class="story-card__title">Into the Mountains</h3>
+                <p class="story-card__desc">Finding peace above the clouds in the tranquil hill stations.</p>
+                <a href="#" class="story-card__link">READ STORY <span>→</span></a>
+              </div>
+            </article>
+
+            <article class="story-card story-card--small reveal-up delay-2">
+              <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80" alt="Coast" class="story-card__img" />
+              <div class="story-card__body">
+                <span class="story-card__meta">ROAD TRIP • AUG 2025</span>
+                <h3 class="story-card__title">Across the Southern Coast</h3>
+                <p class="story-card__desc">Driving along the beautiful endless beaches of the south.</p>
+                <a href="#" class="story-card__link">READ STORY <span>→</span></a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         STATISTICS
+         ============================================================ -->
+    <section class="stats section">
+      <div class="container">
+        <div class="stats__grid">
+          <div class="stat-item reveal-up">
+            <span class="stat-item__num counter" data-target="25">0</span><span class="stat-item__plus">+</span>
+            <span class="stat-item__label">DESTINATIONS</span>
+          </div>
+          <div class="stat-item reveal-up delay-1">
+            <span class="stat-item__num counter" data-target="12">0</span>
+            <span class="stat-item__label">STATES</span>
+          </div>
+          <div class="stat-item reveal-up delay-2">
+            <span class="stat-item__num counter" data-target="40">0</span><span class="stat-item__plus">+</span>
+            <span class="stat-item__label">JOURNEYS</span>
+          </div>
+          <div class="stat-item reveal-up delay-3">
+            <span class="stat-item__num counter" data-target="100">0</span><span class="stat-item__plus">+</span>
+            <span class="stat-item__label">MEMORIES</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         TRAVEL MAP
+         ============================================================ -->
+    <section id="map" class="map section-bg">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <h2 class="section-title">MY TRAVEL MAP</h2>
+          <p class="section-subtitle">Every destination holds a memory.</p>
+        </div>
+
+        <div class="map__container reveal-up">
+          <!-- Very minimal, clean light map representation using CSS layout -->
+          <div class="map__area">
+            
+            <div class="map__marker" style="top: 75%; left: 55%;" data-id="madurai">
+              <div class="marker-pulse"></div>
+              <div class="marker-dot"></div>
+              <span class="marker-label">Madurai</span>
+            </div>
+            
+            <div class="map__marker" style="top: 80%; left: 62%;" data-id="rameswaram">
+              <div class="marker-pulse"></div>
+              <div class="marker-dot"></div>
+              <span class="marker-label">Rameswaram</span>
+            </div>
+
+            <div class="map__marker" style="top: 88%; left: 50%;" data-id="kanyakumari">
+              <div class="marker-pulse"></div>
+              <div class="marker-dot"></div>
+              <span class="marker-label">Kanyakumari</span>
+            </div>
+
+            <div class="map__marker" style="top: 70%; left: 45%;" data-id="ooty">
+              <div class="marker-pulse"></div>
+              <div class="marker-dot"></div>
+              <span class="marker-label">Ooty</span>
+            </div>
+
+            <div class="map__marker" style="top: 78%; left: 38%;" data-id="kerala">
+              <div class="marker-pulse"></div>
+              <div class="marker-dot"></div>
+              <span class="marker-label">Kerala</span>
+            </div>
+
+            <div class="map__marker" style="top: 55%; left: 30%;" data-id="goa">
+              <div class="marker-pulse"></div>
+              <div class="marker-dot"></div>
+              <span class="marker-label">Goa</span>
+            </div>
+
+          </div>
+          
+          <!-- Popup Card -->
+          <div class="map__popup" id="mapPopup" hidden>
+            <img src="" alt="" id="popupImg" class="popup-img" />
+            <div class="popup-content">
+              <h4 id="popupTitle">Title</h4>
+              <p id="popupDate" class="popup-date">Date</p>
+              <p id="popupDesc">Description goes here.</p>
+            </div>
+            <button class="popup-close" id="popupClose">×</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PHOTO GALLERY
+         ============================================================ -->
+    <section id="gallery" class="gallery section">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <h2 class="section-title">PHOTO GALLERY</h2>
+        </div>
+
+        <div class="gallery__grid">
+          <div class="gallery__item item-large reveal-up">
+            <img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&q=80" alt="Gallery" />
+            <div class="gallery__overlay"><span>MADURAI</span></div>
+          </div>
+          <div class="gallery__item reveal-up delay-1">
+            <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=600&q=80" alt="Gallery" />
+            <div class="gallery__overlay"><span>KERALA</span></div>
+          </div>
+          <div class="gallery__item item-tall reveal-up delay-2">
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80" alt="Gallery" />
+            <div class="gallery__overlay"><span>OOTY</span></div>
+          </div>
+          <div class="gallery__item reveal-up">
+            <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=600&q=80" alt="Gallery" />
+            <div class="gallery__overlay"><span>GOA</span></div>
+          </div>
+          <div class="gallery__item reveal-up delay-1">
+            <img src="https://images.unsplash.com/photo-1626015365107-e943e65cbb69?w=600&q=80" alt="Gallery" />
+            <div class="gallery__overlay"><span>KANYAKUMARI</span></div>
+          </div>
+          <div class="gallery__item item-wide reveal-up delay-2">
+            <img src="https://images.unsplash.com/photo-1609710228159-0fa9bd7c0827?w=800&q=80" alt="Gallery" />
+            <div class="gallery__overlay"><span>RAMESWARAM</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" hidden>
+      <button class="lightbox__close" id="lightboxClose">×</button>
+      <button class="lightbox__nav prev" id="lightboxPrev">‹</button>
+      <button class="lightbox__nav next" id="lightboxNext">›</button>
+      <img src="" alt="" class="lightbox__img" id="lightboxImg" />
+      <div class="lightbox__counter" id="lightboxCounter">1 / 6</div>
+    </div>
+
+    <!-- ============================================================
+         TRAVEL QUOTE
+         ============================================================ -->
+    <section class="quote">
+      <div class="container quote__container reveal-up">
+        <h2 class="quote__text">"THE WORLD IS WAITING<br/>TO BE DISCOVERED."</h2>
+        <div class="quote__line"></div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ABOUT SECTION
+         ============================================================ -->
+    <section id="about" class="about section">
+      <div class="container about__grid">
+        <div class="about__img-wrap reveal-up">
+          <img src="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?w=800&q=80" alt="Profile" class="about__img" />
+        </div>
+        <div class="about__content reveal-left delay-1">
+          <h2 class="section-title text-left">ABOUT THE JOURNEY</h2>
+          <p class="about__text">
+            Travel is more than visiting a destination.<br/>
+            It is about experiencing new places, meeting people,<br/>
+            discovering cultures and creating memories.
+          </p>
+          
+          <div class="about__list">
+            <div class="about__item">
+              <span class="about__label">TRAVEL STYLE</span>
+              <span class="about__val">Adventure • Culture • Nature</span>
+            </div>
+            <div class="about__item">
+              <span class="about__label">FAVOURITE PLACE</span>
+              <span class="about__val">Tamil Nadu</span>
+            </div>
+            <div class="about__item">
+              <span class="about__label">NEXT DESTINATION</span>
+              <span class="about__val">Coming Soon</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CONTACT SECTION
+         ============================================================ -->
+    <section id="contact" class="contact section-bg">
+      <div class="container">
+        <div class="contact__container reveal-up">
+          <h2 class="section-title">LET'S PLAN THE NEXT JOURNEY</h2>
+          
+          <form class="contact__form" id="contactForm">
+            <div class="form-group">
+              <input type="text" id="name" placeholder="NAME" required />
+            </div>
+            <div class="form-group">
+              <input type="email" id="email" placeholder="EMAIL" required />
+            </div>
+            <div class="form-group">
+              <input type="text" id="destination" placeholder="DESTINATION" />
+            </div>
+            <div class="form-group form-group--full">
+              <textarea id="message" placeholder="MESSAGE" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary">SEND MESSAGE <span>→</span></button>
+          </form>
+
+          <div class="contact__success" id="contactSuccess" hidden>
+            <div class="success-icon">✓</div>
+            <h3>Thank You</h3>
+            <p>Your message has been sent successfully. I will get back to you soon.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="container footer__container">
+      <div class="footer__brand">
+        <a href="#home" class="footer__logo">WANDER</a>
+        <p class="footer__tagline">Collect moments, not things.</p>
+      </div>
+      
+      <div class="footer__links">
+        <a href="#">Instagram</a>
+        <a href="#">YouTube</a>
+        <a href="#">Facebook</a>
+        <a href="#">GitHub</a>
+      </div>
+      
+      <div class="footer__copy">
+        &copy; 2026 WANDER
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
