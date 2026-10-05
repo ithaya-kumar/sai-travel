@@ -149,30 +149,14 @@ function initializeScrollAnimations() {
    ============================================================ */
 function initializeParallax() {
   const parallaxImg = document.querySelector('.parallax-img');
-  const heroWrapper = document.getElementById('heroImageWrapper');
-  const heroInner = document.getElementById('heroImageInner');
+  if (!parallaxImg) return;
   
-  const isMobile = window.matchMedia("(pointer: coarse)").matches;
+  if (window.matchMedia("(pointer: coarse)").matches) return; // Skip on mobile
 
   window.addEventListener('scroll', () => {
     const scroll = window.scrollY;
-    if (parallaxImg && !isMobile) {
-      parallaxImg.style.transform = `translateY(${scroll * 0.2}px)`;
-    }
-    if (heroInner && !isMobile) {
-      // Subtle scroll parallax for the hero inner wrapper
-      heroInner.style.transform = `translateY(${scroll * 0.05}px)`;
-    }
+    parallaxImg.style.transform = `translateY(${scroll * 0.2}px)`;
   });
-
-  // Mouse parallax for hero image wrapper (very subtle)
-  if (heroWrapper && !isMobile) {
-    document.addEventListener('mousemove', (e) => {
-      const x = (window.innerWidth - e.pageX * 2) / 100;
-      const y = (window.innerHeight - e.pageY * 2) / 100;
-      heroWrapper.style.transform = `translate(${x}px, ${y}px)`;
-    });
-  }
 }
 
 /* ============================================================
