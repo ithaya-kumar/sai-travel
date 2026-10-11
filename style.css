@@ -1385,11 +1385,560 @@ body.has-custom-cursor .cursor {
 .delay-5 { transition-delay: 0.5s; }
 
 /* ============================================================
+   TOP CONTACT BAR & QUICK ACTIONS
+   ============================================================ */
+.top-bar {
+  background-color: #111111;
+  color: #f3f1ec;
+  font-size: 0.8rem;
+  padding: 0.5rem 0;
+  position: relative;
+  z-index: 1001;
+}
+
+.top-bar__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.top-bar__left,
+.top-bar__right {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.top-bar__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #e5e5e5;
+  font-size: 0.78rem;
+}
+
+.top-bar__item a {
+  color: #ffffff;
+  font-weight: 500;
+  transition: color var(--trans-fast);
+}
+
+.top-bar__item a:hover {
+  color: var(--accent);
+}
+
+.top-bar__badge {
+  background-color: var(--accent);
+  color: #ffffff;
+  padding: 0.2rem 0.6rem;
+  border-radius: 50px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Navbar Brand Wrap */
+.navbar__brand-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--text-dark);
+  line-height: 1.1;
+}
+
+.brand-sub {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Hero Badge Highlights */
+.hero__highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1.5rem 0;
+}
+
+.hero-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.9rem;
+  background-color: rgba(200, 155, 90, 0.08);
+  border: 1px solid rgba(200, 155, 90, 0.25);
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  letter-spacing: 0.03em;
+}
+
+.hero-chip--gold {
+  background-color: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+}
+
+.btn--whatsapp {
+  background-color: #25D366;
+  color: #ffffff;
+  border: 1px solid #25D366;
+}
+
+.btn--whatsapp:hover {
+  background-color: #1eb855;
+  border-color: #1eb855;
+  color: #ffffff;
+}
+
+/* Services Section */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.service-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border-light);
+  padding: 2.5rem 2rem;
+  border-radius: 8px;
+  transition: all var(--trans-normal);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: transparent;
+  transition: background-color var(--trans-normal);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+  border-color: rgba(200, 155, 90, 0.4);
+}
+
+.service-card:hover::before {
+  background-color: var(--accent);
+}
+
+.service-card__icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background-color: rgba(200, 155, 90, 0.1);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.service-card__title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.75rem;
+}
+
+.service-card__desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.service-card__btn {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color var(--trans-fast);
+}
+
+.service-card__btn:hover {
+  color: var(--text-dark);
+}
+
+/* Fleet / Car Selection */
+.fleet-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.fleet-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all var(--trans-normal);
+  display: flex;
+  flex-direction: column;
+}
+
+.fleet-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.07);
+  border-color: rgba(200, 155, 90, 0.5);
+}
+
+.fleet-card__img-wrap {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  background-color: #f7f7f7;
+  position: relative;
+}
+
+.fleet-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--trans-normal);
+}
+
+.fleet-card:hover .fleet-card__img {
+  transform: scale(1.05);
+}
+
+.fleet-card__tag {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: var(--text-dark);
+  color: #ffffff;
+  font-size: 0.65rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.fleet-card__body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.fleet-card__title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.25rem;
+}
+
+.fleet-card__sub {
+  font-size: 0.78rem;
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.fleet-card__features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25rem 0;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  padding: 0.75rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.fleet-card__features li {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.fleet-card__btn {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 0.75rem;
+  text-align: center;
+  border-radius: 4px;
+  background-color: var(--text-dark);
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background-color var(--trans-fast);
+}
+
+.fleet-card__btn:hover {
+  background-color: var(--accent);
+}
+
+/* Tamil Highlight Banner */
+.tamil-banner {
+  background: linear-gradient(135deg, #fdfbf7 0%, #f4ede1 100%);
+  border-top: 1px solid rgba(200, 155, 90, 0.3);
+  border-bottom: 1px solid rgba(200, 155, 90, 0.3);
+  padding: 4.5rem 0;
+  text-align: center;
+}
+
+.tamil-banner__box {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.tamil-banner__badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+
+.tamil-banner__quote {
+  font-size: 1.35rem;
+  line-height: 1.9;
+  color: #222222;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.tamil-banner__author {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+}
+
+/* Reviews Section */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.review-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border-light);
+  padding: 2rem 1.5rem;
+  border-radius: 8px;
+  transition: all var(--trans-normal);
+  display: flex;
+  flex-direction: column;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.05);
+  border-color: rgba(200, 155, 90, 0.4);
+}
+
+.review-card__stars {
+  color: #f5a623;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+.review-card__text {
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  line-height: 1.6;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.review-card__author {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.review-card__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(200, 155, 90, 0.15);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.review-card__info h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.review-card__info span {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Contact Grid & Details */
+.contact-details-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.contact-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border-light);
+  padding: 2rem 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: all var(--trans-fast);
+}
+
+.contact-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+}
+
+.contact-card__icon {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+
+.contact-card__title {
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.contact-card__val {
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.contact-card__val a {
+  color: var(--text-dark);
+  transition: color var(--trans-fast);
+}
+
+.contact-card__val a:hover {
+  color: var(--accent);
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 60px;
+  height: 60px;
+  background-color: #25D366;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.whatsapp-float:hover {
+  background-color: #1eb855;
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+}
+
+/* Call Now Floating Button for Mobile */
+.mobile-call-float {
+  display: none;
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+  width: 60px;
+  height: 60px;
+  background-color: #111111;
+  color: #ffffff;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  text-decoration: none;
+}
+
+/* ============================================================
    RESPONSIVE DESIGN
    ============================================================ */
 
 /* Tablet */
 @media (max-width: 1199px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .fleet-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .reviews-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .contact-details-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .dest-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1438,6 +1987,13 @@ body.has-custom-cursor .cursor {
   }
   
   .hero__indicator { display: none; }
+  
+  .services-grid { grid-template-columns: 1fr; }
+  .fleet-grid { grid-template-columns: 1fr; }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .contact-details-grid { grid-template-columns: 1fr; }
+  .tamil-banner__quote { font-size: 1.1rem; }
+  .mobile-call-float { display: flex; }
   
   .dest-grid { grid-template-columns: 1fr; }
   

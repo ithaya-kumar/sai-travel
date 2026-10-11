@@ -4,14 +4,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="WANDER — A premium travel portfolio showcasing beautiful journeys." />
-  <meta name="keywords" content="travel portfolio, India travel, travel photography, minimal" />
-  <title>SAI TRAVELS — Premium Travel Portfolio</title>
-  <link rel="stylesheet" href="style.css?v=2" />
+  <meta name="description"
+    content="Sai Gift Travels is promoted by S.P. Nirmal Pandi at Madurai. We provide 24/7 Airport Transfers, Out-of-Station Transportation, Local Taxi Services, and Tour Packages with A/C & Non-A/C cars at the best prices." />
+  <meta name="keywords"
+    content="Sai Gift Travels, Madurai Car Rental, Taxi Service Madurai, Airport Transfers, Out of Station Cabs, Tour Packages, S.P. Nirmal Pandi" />
+  <title>Sai Gift Travels | Madurai | Car Rental & Tour Packages</title>
+  <link rel="stylesheet" href="style.css?v=3" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" />
 </head>
 
@@ -22,7 +24,7 @@
        ============================================================ -->
   <div id="loader" class="loader">
     <div class="loader__inner">
-      <span class="loader__text">SAI TRAVELS</span>
+      <span class="loader__text">SAI GIFT TRAVELS</span>
       <div class="loader__bar-wrap">
         <div class="loader__bar" id="loaderBar"></div>
       </div>
@@ -35,29 +37,63 @@
   <div class="cursor" id="cursor"></div>
 
   <!-- ============================================================
+       TOP CONTACT BAR
+       ============================================================ -->
+  <div class="top-bar">
+    <div class="container top-bar__container">
+      <div class="top-bar__left">
+        <span class="top-bar__item">
+          📍 <strong>Madurai:</strong> 48, Meenakshi Nagar, 2nd St, Villapuram
+        </span>
+        <span class="top-bar__badge">24/7 ALWAYS OPEN</span>
+      </div>
+      <div class="top-bar__right">
+        <span class="top-bar__item">
+          📞 <strong>Call:</strong> <a href="tel:7904900899">7904900899</a>, <a href="tel:9362652174">9362652174</a>
+        </span>
+        <span class="top-bar__item">
+          ✉️ <a href="mailto:nirmalpandi87@gmail.com">nirmalpandi87@gmail.com</a>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
        NAVBAR
        ============================================================ -->
   <header class="navbar" id="navbar">
     <div class="navbar__container container">
       <a href="#home" class="navbar__logo">
-        <img src="assets/images/logo.png" alt="Sai Gift Travels Logo" class="logo-img" />
+        <div class="navbar__brand-wrap">
+          <img src="assets/images/logo.png" alt="Sai Gift Travels Logo" class="logo-img" />
+          <div class="brand-text">
+            <span class="brand-name">SAI GIFT TRAVELS</span>
+            <span class="brand-sub">MADURAI • CAR RENTAL & TOURS</span>
+          </div>
+        </div>
       </a>
 
       <nav class="navbar__nav">
         <ul class="navbar__links">
           <li><a href="#home" class="navbar__link">HOME</a></li>
-          <li><a href="#destinations" class="navbar__link">DESTINATIONS</a></li>
-          <li><a href="#journey" class="navbar__link">JOURNEYS</a></li>
-          <li><a href="#gallery" class="navbar__link">GALLERY</a></li>
+          <li><a href="#services" class="navbar__link">SERVICES</a></li>
+          <li><a href="#fleet" class="navbar__link">FLEET</a></li>
+          <li><a href="#destinations" class="navbar__link">PACKAGES</a></li>
           <li><a href="#about" class="navbar__link">ABOUT</a></li>
+          <li><a href="#reviews" class="navbar__link">REVIEWS</a></li>
           <li><a href="#contact" class="navbar__link">CONTACT</a></li>
         </ul>
       </nav>
 
-      <button class="navbar__hamburger" id="hamburger" aria-label="Menu">
-        <span class="hamburger__line"></span>
-        <span class="hamburger__line"></span>
-      </button>
+      <div class="navbar__actions" style="display: flex; align-items: center; gap: 1rem;">
+        <a href="tel:7904900899" class="btn btn--primary" style="padding: 0.6rem 1.2rem; font-size: 0.72rem;">
+          CALL NOW
+        </a>
+        <button class="navbar__hamburger" id="hamburger" aria-label="Menu">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -66,12 +102,17 @@
     <nav>
       <ul class="mobile-menu__links">
         <li><a href="#home" class="mobile-menu__link">HOME</a></li>
-        <li><a href="#destinations" class="mobile-menu__link">DESTINATIONS</a></li>
-        <li><a href="#journey" class="mobile-menu__link">JOURNEYS</a></li>
-        <li><a href="#gallery" class="mobile-menu__link">GALLERY</a></li>
-        <li><a href="#about" class="mobile-menu__link">ABOUT</a></li>
+        <li><a href="#services" class="mobile-menu__link">SERVICES</a></li>
+        <li><a href="#fleet" class="mobile-menu__link">OUR FLEET</a></li>
+        <li><a href="#destinations" class="mobile-menu__link">TOUR PACKAGES</a></li>
+        <li><a href="#about" class="mobile-menu__link">ABOUT US</a></li>
+        <li><a href="#reviews" class="mobile-menu__link">REVIEWS</a></li>
         <li><a href="#contact" class="mobile-menu__link">CONTACT</a></li>
       </ul>
+      <div style="margin-top: 2rem; display: flex; flex-direction: column; gap: 0.8rem; padding: 0 2rem;">
+        <a href="tel:7904900899" class="btn btn--primary" style="width: 100%; text-align: center;">CALL 7904900899</a>
+        <a href="https://wa.me/917904900899" class="btn btn--whatsapp" style="width: 100%; text-align: center;">WHATSAPP BOOKING</a>
+      </div>
     </nav>
   </div>
 
@@ -83,42 +124,265 @@
       <div class="container hero__container">
 
         <div class="hero__left">
+          <div class="hero__eyebrow reveal-up" style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+            <span class="hero-chip hero-chip--gold">★ 5.0 RATED</span>
+            <span style="font-size: 0.75rem; letter-spacing: 0.1em; color: var(--accent); font-weight: 600;">
+              PROMOTED BY S.P. NIRMAL PANDI • MADURAI
+            </span>
+          </div>
+
           <h1 class="hero__heading reveal-up delay-1">
-            TRAVEL.<br />DISCOVER.<br />LIVE.
+            COMFORT.<br />SAFETY.<br />BEST PRICES.
           </h1>
+
           <p class="hero__desc reveal-up delay-2">
-            Explore beautiful places, discover new experiences, and create memories that last forever.
+            To make your travel more enjoyable and easy, <strong>Sai Gift Travels</strong> offers the best prices on Tour
+            Packages and lets you select the cars of your choice. Airport Transfers, Out-of-Station Transportation, and Local
+            Taxi Services with 24-hour on-call assistance.
           </p>
+
+          <!-- Highlight Badges -->
+          <div class="hero__highlights reveal-up delay-3">
+            <span class="hero-chip">🚗 A/C & Non-A/C Available</span>
+            <span class="hero-chip">⏱️ 24/7 Always Open</span>
+            <span class="hero-chip">🛡️ Experienced Drivers</span>
+            <span class="hero-chip">✈️ Airport Pickup & Drop</span>
+          </div>
+
           <div class="hero__buttons reveal-up delay-3">
-            <a href="#journey" class="btn btn--primary">EXPLORE JOURNEY</a>
-            <a href="#destinations" class="btn btn--secondary">VIEW DESTINATIONS</a>
+            <a href="tel:7904900899" class="btn btn--primary">
+              📞 CALL: 7904900899
+            </a>
+            <a href="https://wa.me/917904900899?text=Hello%20Sai%20Gift%20Travels,%20I%20would%20like%20to%20book%20a%20car"
+              target="_blank" class="btn btn--whatsapp">
+              💬 WHATSAPP BOOKING
+            </a>
+            <a href="#destinations" class="btn btn--secondary">
+              VIEW PACKAGES
+            </a>
           </div>
         </div>
 
         <div class="hero__right reveal-left delay-4">
           <div class="hero__img-wrapper">
-            <img src="assets/images/hero_img.jpg"
-              alt="Temple Architecture" class="hero__img" />
-
+            <img src="assets/images/hero_img.jpg" alt="Sai Gift Travels Madurai" class="hero__img" />
           </div>
         </div>
 
         <!-- Floating Destination Indicator -->
         <div class="hero__indicator reveal-fade delay-5">
-          <span class="indicator-text">EXPLORE<br /><strong>06 DESTINATIONS</strong></span>
+          <span class="indicator-text">MADURAI & BEYOND<br /><strong>24/7 CAR RENTAL</strong></span>
         </div>
 
       </div>
     </section>
 
     <!-- ============================================================
-         DESTINATIONS SECTION
+         SERVICES SECTION
+         ============================================================ -->
+    <section id="services" class="services section-bg">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-eyebrow" style="font-size: 0.75rem; letter-spacing: 0.15em; color: var(--accent); font-weight: 600; text-transform: uppercase;">
+            WHAT WE OFFER
+          </span>
+          <h2 class="section-title">OUR SERVICES</h2>
+          <p class="section-subtitle">
+            Reliable, safe and budget-friendly transportation solutions for every journey.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Service 1 -->
+          <div class="service-card reveal-up">
+            <div class="service-card__icon">✈️</div>
+            <h3 class="service-card__title">Airport Transfers</h3>
+            <p class="service-card__desc">
+              Punctual and reliable pickup & drop services for Madurai Airport (IXM) & Railway Station. Flight monitoring with zero waiting hassle.
+            </p>
+            <a href="tel:7904900899" class="service-card__btn">BOOK AIRPORT CAB →</a>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="service-card reveal-up delay-1">
+            <div class="service-card__icon">🛣️</div>
+            <h3 class="service-card__title">Out-of-Station Trips</h3>
+            <p class="service-card__desc">
+              Long-distance round trips and one-way drops across Tamil Nadu, Kerala, Karnataka, and South India. Transparent rates with no hidden fees.
+            </p>
+            <a href="https://wa.me/917904900899?text=Enquiry%20for%20Outstation%20Trip" class="service-card__btn">ENQUIRE RATES →</a>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="service-card reveal-up delay-2">
+            <div class="service-card__icon">🏙️</div>
+            <h3 class="service-card__title">Local Taxi Services</h3>
+            <p class="service-card__desc">
+              Explore Madurai city in total comfort. Perfect for Meenakshi Amman Temple darshan, historical visits, shopping, and business travel.
+            </p>
+            <a href="tel:7904900899" class="service-card__btn">CALL FOR LOCAL CAB →</a>
+          </div>
+
+          <!-- Service 4 -->
+          <div class="service-card reveal-up">
+            <div class="service-card__icon">🏖️</div>
+            <h3 class="service-card__title">Tour Packages</h3>
+            <p class="service-card__desc">
+              Customized holiday and pilgrimage tour packages to Rameswaram, Kanyakumari, Kodaikanal, Munnar, and Ooty at unbeatable prices.
+            </p>
+            <a href="#destinations" class="service-card__btn">EXPLORE PACKAGES →</a>
+          </div>
+
+          <!-- Service 5 -->
+          <div class="service-card reveal-up delay-1">
+            <div class="service-card__icon">🕒</div>
+            <h3 class="service-card__title">24-Hour Taxi On Call</h3>
+            <p class="service-card__desc">
+              A taxi is always on call for 24-hour assistance. Whenever you need late-night pickup or urgent travel, we are always ready.
+            </p>
+            <a href="tel:9362652174" class="service-card__btn">24/7 HELPLINE →</a>
+          </div>
+
+          <!-- Service 6 -->
+          <div class="service-card reveal-up delay-2">
+            <div class="service-card__icon">👨‍✈️</div>
+            <h3 class="service-card__title">Experienced Chauffeurs</h3>
+            <p class="service-card__desc">
+              உங்கள் பாதுகாப்பான பயணத்திற்காக அனுபவம் வாய்ந்த டிரைவர்கள். Polite, verified, and route-expert drivers for secure family travel.
+            </p>
+            <a href="#contact" class="service-card__btn">MEET OUR TEAM →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FLEET / CAR SELECTION SECTION
+         ============================================================ -->
+    <section id="fleet" class="fleet section">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-eyebrow" style="font-size: 0.75rem; letter-spacing: 0.15em; color: var(--accent); font-weight: 600; text-transform: uppercase;">
+            CHOOSE YOUR CAR
+          </span>
+          <h2 class="section-title">OUR FLEET</h2>
+          <p class="section-subtitle">
+            Well-maintained, clean, and sanitized vehicles with A/C and Non-A/C options.
+          </p>
+        </div>
+
+        <div class="fleet-grid">
+          <!-- Car 1: Sedan -->
+          <div class="fleet-card reveal-up">
+            <div class="fleet-card__img-wrap">
+              <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=600&q=80" alt="Sedan Dzire Etios" class="fleet-card__img" />
+              <span class="fleet-card__tag">MOST POPULAR</span>
+            </div>
+            <div class="fleet-card__body">
+              <h3 class="fleet-card__title">Comfort Sedan</h3>
+              <span class="fleet-card__sub">Swift Dzire / Toyota Etios</span>
+              <ul class="fleet-card__features">
+                <li>👥 4 Passengers + 1 Driver</li>
+                <li>🧳 3 Luggage Bags</li>
+                <li>❄️ A/C and Non-A/C Available</li>
+                <li>🎵 Music System & Clean Interiors</li>
+              </ul>
+              <a href="https://wa.me/917904900899?text=Book%20Sedan%20(Dzire/Etios)" class="fleet-card__btn">BOOK SEDAN</a>
+            </div>
+          </div>
+
+          <!-- Car 2: SUV -->
+          <div class="fleet-card reveal-up delay-1">
+            <div class="fleet-card__img-wrap">
+              <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=600&q=80" alt="SUV Innova Ertiga" class="fleet-card__img" />
+              <span class="fleet-card__tag">FAMILY CHOICE</span>
+            </div>
+            <div class="fleet-card__body">
+              <h3 class="fleet-card__title">Premium SUV / MUV</h3>
+              <span class="fleet-card__sub">Innova Crysta / Maruti Ertiga</span>
+              <ul class="fleet-card__features">
+                <li>👥 6 - 7 Passengers + 1 Driver</li>
+                <li>🧳 5 Luggage Bags</li>
+                <li>❄️ Dual A/C & Reclining Seats</li>
+                <li>🏔️ Best for Hill Stations & Long Trips</li>
+              </ul>
+              <a href="https://wa.me/917904900899?text=Book%20SUV%20(Innova/Ertiga)" class="fleet-card__btn">BOOK SUV</a>
+            </div>
+          </div>
+
+          <!-- Car 3: Hatchback -->
+          <div class="fleet-card reveal-up delay-2">
+            <div class="fleet-card__img-wrap">
+              <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?w=600&q=80" alt="Hatchback Swift" class="fleet-card__img" />
+              <span class="fleet-card__tag">BUDGET FRIENDLY</span>
+            </div>
+            <div class="fleet-card__body">
+              <h3 class="fleet-card__title">Economy Hatchback</h3>
+              <span class="fleet-card__sub">Maruti Swift / WagonR</span>
+              <ul class="fleet-card__features">
+                <li>👥 4 Passengers + 1 Driver</li>
+                <li>🧳 2 Luggage Bags</li>
+                <li>❄️ A/C and Non-A/C Available</li>
+                <li>🏙️ Ideal for City Travel & Quick Drops</li>
+              </ul>
+              <a href="https://wa.me/917904900899?text=Book%20Hatchback%20(Swift/WagonR)" class="fleet-card__btn">BOOK HATCHBACK</a>
+            </div>
+          </div>
+
+          <!-- Car 4: Tempo Traveller -->
+          <div class="fleet-card reveal-up delay-3">
+            <div class="fleet-card__img-wrap">
+              <img src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?w=600&q=80" alt="Tempo Traveller" class="fleet-card__img" />
+              <span class="fleet-card__tag">GROUP TOURS</span>
+            </div>
+            <div class="fleet-card__body">
+              <h3 class="fleet-card__title">Tempo Traveller</h3>
+              <span class="fleet-card__sub">12 / 14 / 17 Seater Luxury Van</span>
+              <ul class="fleet-card__features">
+                <li>👥 12 to 17 Passengers</li>
+                <li>🧳 Heavy Luggage Space</li>
+                <li>❄️ High-Roof Pushback Seats & A/C</li>
+                <li>🛕 Ideal for Temple Yatras & Family Tours</li>
+              </ul>
+              <a href="https://wa.me/917904900899?text=Book%20Tempo%20Traveller%20(Group%20Tour)" class="fleet-card__btn">BOOK TEMPO</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         TAMIL HIGHLIGHT BANNER
+         ============================================================ -->
+    <section class="tamil-banner">
+      <div class="container">
+        <div class="tamil-banner__box reveal-up">
+          <span class="tamil-banner__badge">வாடிக்கையாளர் நம்பிக்கை • CUSTOMER COMMITMENT</span>
+          <p class="tamil-banner__quote">
+            "உங்கள் பாதுகாப்பான பயணத்திற்காக அனுபவம் வாய்ந்த டிரைவர்களை நாங்கள் உங்களுக்கு வழங்குகிறோம். 
+            24 மணி நேரமும் சிறந்த சேவையை வழங்குகிறோம். Ac and Non Ac கிடைக்கும். 
+            சிறந்த சேவையை எங்கள் அனைத்து வாடிக்கையாளர்களுக்கும் வழங்க முனைப்புடன் செயல்படுகிறோம்."
+          </p>
+          <div class="tamil-banner__author">
+            — S.P. Nirmal Pandi, Founder & Promoter • Sai Gift Travels, Madurai
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         DESTINATIONS SECTION (TOUR PACKAGES)
          ============================================================ -->
     <section id="destinations" class="destinations section-bg">
       <div class="container">
         <div class="section-header reveal-up">
-          <h2 class="section-title">EXPLORE DESTINATIONS</h2>
-          <p class="section-subtitle">Places that turn journeys into memories.</p>
+          <span class="section-eyebrow" style="font-size: 0.75rem; letter-spacing: 0.15em; color: var(--accent); font-weight: 600; text-transform: uppercase;">
+            BEST PRICE PACKAGES
+          </span>
+          <h2 class="section-title">POPULAR TOUR PACKAGES</h2>
+          <p class="section-subtitle">
+            Curated South Indian tours with experienced drivers and door-to-door pickup.
+          </p>
         </div>
 
         <div class="dest-grid">
@@ -129,9 +393,11 @@
             </div>
             <div class="dest-card__body">
               <span class="dest-card__loc">Tamil Nadu, India</span>
-              <h3 class="dest-card__title">MADURAI</h3>
-              <p class="dest-card__desc">The ancient city of temples and rich cultural heritage.</p>
-              <a href="#gallery" class="dest-card__btn">EXPLORE <span>→</span></a>
+              <h3 class="dest-card__title">MADURAI TEMPLE TOUR</h3>
+              <p class="dest-card__desc">
+                Meenakshi Amman Temple, Thirumalai Nayakkar Mahal, Alagar Kovil, and Gandhi Memorial Museum.
+              </p>
+              <a href="https://wa.me/917904900899?text=Madurai%20City%20Tour%20Package" class="dest-card__btn">BOOK PACKAGE <span>→</span></a>
             </div>
           </article>
 
@@ -142,9 +408,11 @@
             </div>
             <div class="dest-card__body">
               <span class="dest-card__loc">Tamil Nadu, India</span>
-              <h3 class="dest-card__title">RAMESWARAM</h3>
-              <p class="dest-card__desc">A sacred island known for its iconic bridge and pristine waters.</p>
-              <a href="#gallery" class="dest-card__btn">EXPLORE <span>→</span></a>
+              <h3 class="dest-card__title">RAMESWARAM & DHANUSHKODI</h3>
+              <p class="dest-card__desc">
+                Pamban Bridge, Ramanathaswamy Temple (22 Theerthams), Dr. APJ Abdul Kalam Memorial, and ghost town.
+              </p>
+              <a href="https://wa.me/917904900899?text=Rameswaram%20Tour%20Package" class="dest-card__btn">BOOK PACKAGE <span>→</span></a>
             </div>
           </article>
 
@@ -155,22 +423,26 @@
             </div>
             <div class="dest-card__body">
               <span class="dest-card__loc">Tamil Nadu, India</span>
-              <h3 class="dest-card__title">KANYAKUMARI</h3>
-              <p class="dest-card__desc">The southernmost tip where three beautiful oceans meet.</p>
-              <a href="#gallery" class="dest-card__btn">EXPLORE <span>→</span></a>
+              <h3 class="dest-card__title">KANYAKUMARI SUNSET TOUR</h3>
+              <p class="dest-card__desc">
+                Vivekananda Rock Memorial, Thiruvalluvar Statue, Triveni Sangam, and majestic Sunset & Sunrise view.
+              </p>
+              <a href="https://wa.me/917904900899?text=Kanyakumari%20Tour%20Package" class="dest-card__btn">BOOK PACKAGE <span>→</span></a>
             </div>
           </article>
 
           <!-- Card 4 -->
           <article class="dest-card reveal-up">
             <div class="dest-card__img-wrap">
-              <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80" alt="Ooty" />
+              <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80" alt="Kodaikanal" />
             </div>
             <div class="dest-card__body">
               <span class="dest-card__loc">Tamil Nadu, India</span>
-              <h3 class="dest-card__title">OOTY</h3>
-              <p class="dest-card__desc">Rolling hills, tea gardens, and misty mountain mornings.</p>
-              <a href="#gallery" class="dest-card__btn">EXPLORE <span>→</span></a>
+              <h3 class="dest-card__title">KODAIKANAL HILL ESCAPE</h3>
+              <p class="dest-card__desc">
+                Kodai Lake, Pillar Rocks, Coaker's Walk, Silver Cascade Falls, and lush pine forests with cool mist.
+              </p>
+              <a href="https://wa.me/917904900899?text=Kodaikanal%20Tour%20Package" class="dest-card__btn">BOOK PACKAGE <span>→</span></a>
             </div>
           </article>
 
@@ -181,22 +453,26 @@
             </div>
             <div class="dest-card__body">
               <span class="dest-card__loc">Kerala, India</span>
-              <h3 class="dest-card__title">KERALA</h3>
-              <p class="dest-card__desc">Serene backwaters and lush green landscapes.</p>
-              <a href="#gallery" class="dest-card__btn">EXPLORE <span>→</span></a>
+              <h3 class="dest-card__title">KERALA & MUNNAR WONDER</h3>
+              <p class="dest-card__desc">
+                Tea garden trails in Munnar, serene Alleppey backwaters, and pristine green landscapes.
+              </p>
+              <a href="https://wa.me/917904900899?text=Kerala%20Tour%20Package" class="dest-card__btn">BOOK PACKAGE <span>→</span></a>
             </div>
           </article>
 
           <!-- Card 6 -->
           <article class="dest-card reveal-up delay-2">
             <div class="dest-card__img-wrap">
-              <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=600&q=80" alt="Goa" />
+              <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=600&q=80" alt="Ooty" />
             </div>
             <div class="dest-card__body">
-              <span class="dest-card__loc">Goa, India</span>
-              <h3 class="dest-card__title">GOA</h3>
-              <p class="dest-card__desc">Golden beaches, beautiful sunsets, and endless coastlines.</p>
-              <a href="#gallery" class="dest-card__btn">EXPLORE <span>→</span></a>
+              <span class="dest-card__loc">Tamil Nadu, India</span>
+              <h3 class="dest-card__title">OOTY & COONOOR</h3>
+              <p class="dest-card__desc">
+                Botanical Gardens, Doddabetta Peak, Nilgiri Toy Train, and fragrant tea estates.
+              </p>
+              <a href="https://wa.me/917904900899?text=Ooty%20Tour%20Package" class="dest-card__btn">BOOK PACKAGE <span>→</span></a>
             </div>
           </article>
         </div>
@@ -213,21 +489,24 @@
       </div>
       <div class="container featured__container">
         <div class="featured__card reveal-up">
-          <span class="featured__eyebrow">FEATURED JOURNEY</span>
-          <h2 class="featured__title">KERALA</h2>
-          <p class="featured__desc">"Where nature meets unforgettable moments."</p>
-          <a href="#contact" class="btn btn--primary">EXPLORE KERALA <span>→</span></a>
+          <span class="featured__eyebrow">POPULAR ROUTE</span>
+          <h2 class="featured__title">MADURAI TO RAMESWARAM & KERALA</h2>
+          <p class="featured__desc">
+            "Comfortable sedans & SUVs with experienced chauffeurs for seamless South Indian road journeys."
+          </p>
+          <a href="tel:7904900899" class="btn btn--primary">BOOK THIS TRIP <span>→</span></a>
         </div>
       </div>
     </section>
 
     <!-- ============================================================
-         JOURNEY TIMELINE
+         JOURNEY TIMELINE / MILESTONES
          ============================================================ -->
     <section id="journey" class="journey section">
       <div class="container">
         <div class="section-header reveal-up">
-          <h2 class="section-title">MY JOURNEY</h2>
+          <h2 class="section-title">POPULAR TRAVEL ROUTES</h2>
+          <p class="section-subtitle">Regular outstation taxi routes operated from Madurai.</p>
         </div>
 
         <div class="timeline">
@@ -239,28 +518,28 @@
             <div class="timeline__item reveal-up">
               <div class="timeline__dot"></div>
               <div class="timeline__content">
-                <span class="timeline__year">2024</span>
-                <h3 class="timeline__place">MADURAI</h3>
+                <span class="timeline__year">ROUTE 1</span>
+                <h3 class="timeline__place">MADURAI CITY</h3>
               </div>
             </div>
             <div class="timeline__item reveal-up delay-1">
               <div class="timeline__dot"></div>
               <div class="timeline__content">
-                <span class="timeline__year">2025</span>
-                <h3 class="timeline__place">KERALA</h3>
+                <span class="timeline__year">ROUTE 2</span>
+                <h3 class="timeline__place">RAMESWARAM</h3>
               </div>
             </div>
             <div class="timeline__item reveal-up delay-2">
               <div class="timeline__dot"></div>
               <div class="timeline__content">
-                <span class="timeline__year">2025</span>
-                <h3 class="timeline__place">GOA</h3>
+                <span class="timeline__year">ROUTE 3</span>
+                <h3 class="timeline__place">KODAIKANAL</h3>
               </div>
             </div>
             <div class="timeline__item reveal-up delay-3">
               <div class="timeline__dot"></div>
               <div class="timeline__content">
-                <span class="timeline__year">2026</span>
+                <span class="timeline__year">ROUTE 4</span>
                 <h3 class="timeline__place">KANYAKUMARI</h3>
               </div>
             </div>
@@ -270,74 +549,105 @@
     </section>
 
     <!-- ============================================================
-         TRAVEL STORIES
+         STATISTICS
          ============================================================ -->
-    <section id="stories" class="stories section-bg">
+    <section class="stats section-bg">
       <div class="container">
-        <div class="section-header reveal-up">
-          <h2 class="section-title">TRAVEL STORIES</h2>
-        </div>
-
-        <div class="stories__grid">
-          <article class="story-card story-card--large reveal-up">
-            <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800&q=80" alt="Sunset"
-              class="story-card__img" />
-            <div class="story-card__body">
-              <span class="story-card__meta">COASTAL • MARCH 2026</span>
-              <h3 class="story-card__title">Chasing the Sunset</h3>
-              <p class="story-card__desc">A journey to the edge of the continent to witness nature's finest colors.</p>
-              <a href="#" class="story-card__link">READ STORY <span>→</span></a>
-            </div>
-          </article>
-
-          <div class="stories__side">
-            <article class="story-card story-card--small reveal-up delay-1">
-              <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80" alt="Mountains"
-                class="story-card__img" />
-              <div class="story-card__body">
-                <span class="story-card__meta">NATURE • JAN 2025</span>
-                <h3 class="story-card__title">Into the Mountains</h3>
-                <p class="story-card__desc">Finding peace above the clouds in the tranquil hill stations.</p>
-                <a href="#" class="story-card__link">READ STORY <span>→</span></a>
-              </div>
-            </article>
-
-            <article class="story-card story-card--small reveal-up delay-2">
-              <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80" alt="Coast"
-                class="story-card__img" />
-              <div class="story-card__body">
-                <span class="story-card__meta">ROAD TRIP • AUG 2025</span>
-                <h3 class="story-card__title">Across the Southern Coast</h3>
-                <p class="story-card__desc">Driving along the beautiful endless beaches of the south.</p>
-                <a href="#" class="story-card__link">READ STORY <span>→</span></a>
-              </div>
-            </article>
+        <div class="stats__grid">
+          <div class="stat-item reveal-up">
+            <span class="stat-item__num counter" data-target="24">0</span><span class="stat-item__plus">/7</span>
+            <span class="stat-item__label">ALWAYS OPEN</span>
+          </div>
+          <div class="stat-item reveal-up delay-1">
+            <span class="stat-item__num counter" data-target="5">0</span><span class="stat-item__plus">.0 ★</span>
+            <span class="stat-item__label">CUSTOMER RATING</span>
+          </div>
+          <div class="stat-item reveal-up delay-2">
+            <span class="stat-item__num counter" data-target="30">0</span><span class="stat-item__plus">+</span>
+            <span class="stat-item__label">VERIFIED REVIEWS</span>
+          </div>
+          <div class="stat-item reveal-up delay-3">
+            <span class="stat-item__num counter" data-target="100">0</span><span class="stat-item__plus">%</span>
+            <span class="stat-item__label">SAFE DRIVERS</span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ============================================================
-         STATISTICS
+         CUSTOMER REVIEWS SECTION (FROM UKNO LISTING)
          ============================================================ -->
-    <section class="stats section">
+    <section id="reviews" class="reviews section">
       <div class="container">
-        <div class="stats__grid">
-          <div class="stat-item reveal-up">
-            <span class="stat-item__num counter" data-target="25">0</span><span class="stat-item__plus">+</span>
-            <span class="stat-item__label">DESTINATIONS</span>
+        <div class="section-header reveal-up">
+          <span class="section-eyebrow" style="font-size: 0.75rem; letter-spacing: 0.15em; color: var(--accent); font-weight: 600; text-transform: uppercase;">
+            VERIFIED FEEDBACK
+          </span>
+          <h2 class="section-title">WHAT OUR CLIENTS SAY</h2>
+          <p class="section-subtitle">
+            Rated 5.0 / 5.0 (30+ Votes) on Ukno Business Directory.
+          </p>
+        </div>
+
+        <div class="reviews-grid">
+          <!-- Review 1 -->
+          <div class="review-card reveal-up">
+            <div class="review-card__stars">★★★★★</div>
+            <p class="review-card__text">
+              "Good Service. Very prompt pickup and clean vehicle. Made our Madurai visit stress-free."
+            </p>
+            <div class="review-card__author">
+              <div class="review-card__avatar">V</div>
+              <div class="review-card__info">
+                <h4>Vinothkumar</h4>
+                <span>Madurai Traveler • Jul 2025</span>
+              </div>
+            </div>
           </div>
-          <div class="stat-item reveal-up delay-1">
-            <span class="stat-item__num counter" data-target="12">0</span>
-            <span class="stat-item__label">STATES</span>
+
+          <!-- Review 2 -->
+          <div class="review-card reveal-up delay-1">
+            <div class="review-card__stars">★★★★★</div>
+            <p class="review-card__text">
+              "Very nice service. Excellent drivers with polite behavior and smooth highway driving. Highly recommended!"
+            </p>
+            <div class="review-card__author">
+              <div class="review-card__avatar">K</div>
+              <div class="review-card__info">
+                <h4>K Suresh Babu</h4>
+                <span>Outstation Client • Jul 2025</span>
+              </div>
+            </div>
           </div>
-          <div class="stat-item reveal-up delay-2">
-            <span class="stat-item__num counter" data-target="40">0</span><span class="stat-item__plus">+</span>
-            <span class="stat-item__label">JOURNEYS</span>
+
+          <!-- Review 3 -->
+          <div class="review-card reveal-up delay-2">
+            <div class="review-card__stars">★★★★★</div>
+            <p class="review-card__text">
+              "Good service of car vendors and drivers, thank you for your transparent pricing and friendly support."
+            </p>
+            <div class="review-card__author">
+              <div class="review-card__avatar">P</div>
+              <div class="review-card__info">
+                <h4>Pradeep</h4>
+                <span>Tour Package Client • Jul 2025</span>
+              </div>
+            </div>
           </div>
-          <div class="stat-item reveal-up delay-3">
-            <span class="stat-item__num counter" data-target="100">0</span><span class="stat-item__plus">+</span>
-            <span class="stat-item__label">MEMORIES</span>
+
+          <!-- Review 4 -->
+          <div class="review-card reveal-up delay-3">
+            <div class="review-card__stars">★★★★★</div>
+            <p class="review-card__text">
+              "Super service! The 24-hour on-call assistance helped us during our late-night airport drop. Very reliable."
+            </p>
+            <div class="review-card__author">
+              <div class="review-card__avatar">M</div>
+              <div class="review-card__info">
+                <h4>Murugan</h4>
+                <span>Airport Transfer • Jul 2025</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -349,18 +659,17 @@
     <section id="map" class="map section-bg">
       <div class="container">
         <div class="section-header reveal-up">
-          <h2 class="section-title">MY TRAVEL MAP</h2>
-          <p class="section-subtitle">Every destination holds a memory.</p>
+          <h2 class="section-title">SERVICE COVERAGE MAP</h2>
+          <p class="section-subtitle">Based in Madurai, serving all major tourist hubs across Tamil Nadu & Kerala.</p>
         </div>
 
         <div class="map__container reveal-up">
-          <!-- Very minimal, clean light map representation using CSS layout -->
           <div class="map__area">
 
             <div class="map__marker" style="top: 75%; left: 55%;" data-id="madurai">
               <div class="marker-pulse"></div>
               <div class="marker-dot"></div>
-              <span class="marker-label">Madurai</span>
+              <span class="marker-label">Madurai (HQ)</span>
             </div>
 
             <div class="map__marker" style="top: 80%; left: 62%;" data-id="rameswaram">
@@ -378,7 +687,7 @@
             <div class="map__marker" style="top: 70%; left: 45%;" data-id="ooty">
               <div class="marker-pulse"></div>
               <div class="marker-dot"></div>
-              <span class="marker-label">Ooty</span>
+              <span class="marker-label">Ooty & Kodai</span>
             </div>
 
             <div class="map__marker" style="top: 78%; left: 38%;" data-id="kerala">
@@ -390,7 +699,7 @@
             <div class="map__marker" style="top: 55%; left: 30%;" data-id="goa">
               <div class="marker-pulse"></div>
               <div class="marker-dot"></div>
-              <span class="marker-label">Goa</span>
+              <span class="marker-label">South India</span>
             </div>
 
           </div>
@@ -415,32 +724,32 @@
     <section id="gallery" class="gallery section">
       <div class="container">
         <div class="section-header reveal-up">
-          <h2 class="section-title">PHOTO GALLERY</h2>
+          <h2 class="section-title">DESTINATIONS GALLERY</h2>
         </div>
 
         <div class="gallery__grid">
           <div class="gallery__item item-large reveal-up">
-            <img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&q=80" alt="Gallery" />
+            <img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&q=80" alt="Madurai Meenakshi Temple" />
             <div class="gallery__overlay"><span>MADURAI</span></div>
           </div>
           <div class="gallery__item reveal-up delay-1">
-            <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=600&q=80" alt="Gallery" />
+            <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=600&q=80" alt="Kerala Backwaters" />
             <div class="gallery__overlay"><span>KERALA</span></div>
           </div>
           <div class="gallery__item item-tall reveal-up delay-2">
-            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80" alt="Gallery" />
-            <div class="gallery__overlay"><span>OOTY</span></div>
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80" alt="Kodaikanal Lake" />
+            <div class="gallery__overlay"><span>KODAIKANAL</span></div>
           </div>
           <div class="gallery__item reveal-up">
-            <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=600&q=80" alt="Gallery" />
-            <div class="gallery__overlay"><span>GOA</span></div>
+            <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=600&q=80" alt="Beaches" />
+            <div class="gallery__overlay"><span>COASTAL TOURS</span></div>
           </div>
           <div class="gallery__item reveal-up delay-1">
-            <img src="https://images.unsplash.com/photo-1626015365107-e943e65cbb69?w=600&q=80" alt="Gallery" />
+            <img src="https://images.unsplash.com/photo-1626015365107-e943e65cbb69?w=600&q=80" alt="Kanyakumari Rock" />
             <div class="gallery__overlay"><span>KANYAKUMARI</span></div>
           </div>
           <div class="gallery__item item-wide reveal-up delay-2">
-            <img src="https://images.unsplash.com/photo-1609710228159-0fa9bd7c0827?w=800&q=80" alt="Gallery" />
+            <img src="https://images.unsplash.com/photo-1609710228159-0fa9bd7c0827?w=800&q=80" alt="Pamban Bridge Rameswaram" />
             <div class="gallery__overlay"><span>RAMESWARAM</span></div>
           </div>
         </div>
@@ -457,44 +766,42 @@
     </div>
 
     <!-- ============================================================
-         TRAVEL QUOTE
-         ============================================================ -->
-    <section class="quote">
-      <div class="container quote__container reveal-up">
-        <h2 class="quote__text">"THE WORLD IS WAITING<br />TO BE DISCOVERED."</h2>
-        <div class="quote__line"></div>
-      </div>
-    </section>
-
-    <!-- ============================================================
          ABOUT SECTION
          ============================================================ -->
-    <section id="about" class="about section">
+    <section id="about" class="about section-bg">
       <div class="container about__grid">
         <div class="about__img-wrap reveal-up">
-          <img src="https://images.unsplash.com/photo-1539635278303-d4002c07eae3?w=800&q=80" alt="Profile"
-            class="about__img" />
+          <img src="assets/images/hero_img.jpg" alt="Sai Gift Travels Madurai" class="about__img" />
         </div>
         <div class="about__content reveal-left delay-1">
-          <h2 class="section-title text-left">ABOUT THE JOURNEY</h2>
+          <span style="font-size: 0.75rem; letter-spacing: 0.15em; color: var(--accent); font-weight: 600; text-transform: uppercase;">
+            ABOUT SAI GIFT TRAVELS
+          </span>
+          <h2 class="section-title text-left">PROMOTED BY S.P. NIRMAL PANDI</h2>
           <p class="about__text">
-            Travel is more than visiting a destination.<br />
-            It is about experiencing new places, meeting people,<br />
-            discovering cultures and creating memories.
+            <strong>Sai Gift Travels</strong> is promoted by <strong>S.P. Nirmal Pandi</strong> at Madurai. We work hard to provide excellent customer service to all our clients.
+            <br /><br />
+            To make your travel more enjoyable and easy, we offer the best prices on Tour Packages and let you select the cars of your choice. We offer all services, including Airport Transfers, Out-of-Station Transportation, and Local Taxi Services, at affordable prices.
+            <br /><br />
+            A taxi is always on call for 24-hour assistance. A/C and Non-A/C are both accessible.
           </p>
 
           <div class="about__list">
             <div class="about__item">
-              <span class="about__label">TRAVEL STYLE</span>
-              <span class="about__val">Adventure • Culture • Nature</span>
+              <span class="about__label">PROMOTER</span>
+              <span class="about__val">S.P. Nirmal Pandi</span>
             </div>
             <div class="about__item">
-              <span class="about__label">FAVOURITE PLACE</span>
-              <span class="about__val">Tamil Nadu</span>
+              <span class="about__label">LOCATION</span>
+              <span class="about__val">Villapuram, Madurai - 625012</span>
             </div>
             <div class="about__item">
-              <span class="about__label">NEXT DESTINATION</span>
-              <span class="about__val">Coming Soon</span>
+              <span class="about__label">AVAILABILITY</span>
+              <span class="about__val">24/7 (Always Open)</span>
+            </div>
+            <div class="about__item">
+              <span class="about__label">SERVICES</span>
+              <span class="about__val">Car Rental • Taxis • Tour Packages</span>
             </div>
           </div>
         </div>
@@ -502,33 +809,95 @@
     </section>
 
     <!-- ============================================================
-         CONTACT SECTION
+         CONTACT & BOOKING SECTION
          ============================================================ -->
-    <section id="contact" class="contact section-bg">
+    <section id="contact" class="contact section">
       <div class="container">
-        <div class="contact__container reveal-up">
-          <h2 class="section-title">LET'S PLAN THE NEXT JOURNEY</h2>
+        <div class="section-header reveal-up">
+          <span class="section-eyebrow" style="font-size: 0.75rem; letter-spacing: 0.15em; color: var(--accent); font-weight: 600; text-transform: uppercase;">
+            GET IN TOUCH
+          </span>
+          <h2 class="section-title">BOOK YOUR JOURNEY</h2>
+          <p class="section-subtitle">Call us 24/7 or fill out the booking request below.</p>
+        </div>
 
+        <!-- Contact Detail Cards -->
+        <div class="contact-details-grid reveal-up">
+          <!-- Card 1: Phone -->
+          <div class="contact-card">
+            <div class="contact-card__icon">📞</div>
+            <h3 class="contact-card__title">Phone Numbers</h3>
+            <div class="contact-card__val">
+              <a href="tel:7904900899">7904900899</a><br />
+              <a href="tel:9362652174">9362652174</a>
+            </div>
+          </div>
+
+          <!-- Card 2: WhatsApp -->
+          <div class="contact-card">
+            <div class="contact-card__icon">💬</div>
+            <h3 class="contact-card__title">WhatsApp Chat</h3>
+            <div class="contact-card__val">
+              <a href="https://wa.me/917904900899" target="_blank" style="color: #25D366;">
+                +91 7904900899
+              </a><br />
+              <span style="font-size: 0.75rem; color: var(--text-muted);">Instant Chat & Booking</span>
+            </div>
+          </div>
+
+          <!-- Card 3: Email & Web -->
+          <div class="contact-card">
+            <div class="contact-card__icon">✉️</div>
+            <h3 class="contact-card__title">Email & Website</h3>
+            <div class="contact-card__val">
+              <a href="mailto:nirmalpandi87@gmail.com">nirmalpandi87@gmail.com</a><br />
+              <a href="https://www.saigifttravels.com" target="_blank">www.saigifttravels.com</a>
+            </div>
+          </div>
+
+          <!-- Card 4: Address -->
+          <div class="contact-card">
+            <div class="contact-card__icon">📍</div>
+            <h3 class="contact-card__title">Office Address</h3>
+            <div class="contact-card__val">
+              48, Meenakshi Nagar, 2nd St,<br />
+              Villapuram, Madurai,<br />
+              Tamil Nadu - 625012
+            </div>
+          </div>
+        </div>
+
+        <!-- Booking Form Container -->
+        <div class="contact__container reveal-up">
           <form class="contact__form" id="contactForm">
             <div class="form-group">
-              <input type="text" id="name" placeholder="NAME" required />
+              <input type="text" id="name" placeholder="YOUR NAME" required />
             </div>
             <div class="form-group">
-              <input type="email" id="email" placeholder="EMAIL" required />
+              <input type="tel" id="phone" placeholder="PHONE NUMBER (E.G. 9876543210)" required />
             </div>
             <div class="form-group">
-              <input type="text" id="destination" placeholder="DESTINATION" />
+              <input type="text" id="pickup" placeholder="PICKUP LOCATION (E.G. MADURAI)" required />
+            </div>
+            <div class="form-group">
+              <input type="text" id="destination" placeholder="DESTINATION (E.G. RAMESWARAM, KODAIKANAL)" required />
+            </div>
+            <div class="form-group">
+              <input type="date" id="date" placeholder="DATE OF JOURNEY" required />
+            </div>
+            <div class="form-group">
+              <input type="text" id="vehicle" placeholder="VEHICLE (SEDAN / SUV / HATCHBACK / TEMPO)" />
             </div>
             <div class="form-group form-group--full">
-              <textarea id="message" placeholder="MESSAGE" rows="4" required></textarea>
+              <textarea id="message" placeholder="EXTRA REQUIREMENTS (A/C OR NON-A/C, NUMBER OF PASSENGERS)" rows="3"></textarea>
             </div>
-            <button type="submit" class="btn btn--primary">SEND MESSAGE <span>→</span></button>
+            <button type="submit" class="btn btn--primary">REQUEST BOOKING <span>→</span></button>
           </form>
 
           <div class="contact__success" id="contactSuccess" hidden>
             <div class="success-icon">✓</div>
-            <h3>Thank You</h3>
-            <p>Your message has been sent successfully. I will get back to you soon.</p>
+            <h3>Thank You!</h3>
+            <p>Your booking enquiry has been received. S.P. Nirmal Pandi will call you back shortly. For urgent rides, please call <strong>7904900899</strong> directly.</p>
           </div>
         </div>
       </div>
@@ -545,21 +914,38 @@
         <a href="#home" class="footer__logo">
           <img src="assets/images/logo.png" alt="Sai Gift Travels Logo" class="logo-img-large" />
         </a>
-        <p class="footer__tagline">Collect moments, not things.</p>
+        <h3 style="font-family: var(--font-serif); font-size: 1.2rem; color: var(--text-dark); margin: 0.5rem 0 0.25rem;">
+          SAI GIFT TRAVELS
+        </h3>
+        <p class="footer__tagline">
+          Promoted by S.P. Nirmal Pandi • Madurai, Tamil Nadu<br />
+          24/7 Car Rental & Tour Packages Service
+        </p>
       </div>
 
       <div class="footer__links">
-        <a href="#">Instagram</a>
-        <a href="#">YouTube</a>
-        <a href="#">Facebook</a>
-        <a href="#">GitHub</a>
+        <a href="tel:7904900899">📞 7904900899</a>
+        <a href="tel:9362652174">📞 9362652174</a>
+        <a href="https://wa.me/917904900899" target="_blank">💬 WhatsApp</a>
+        <a href="mailto:nirmalpandi87@gmail.com">✉️ Email</a>
       </div>
 
       <div class="footer__copy">
-        &copy; 2026 WANDER
+        &copy; 2026 Sai Gift Travels. All Rights Reserved. | 48, Meenakshi Nagar, 2nd St, Villapuram, Madurai 625012.
       </div>
     </div>
   </footer>
+
+  <!-- Floating WhatsApp Action Button -->
+  <a href="https://wa.me/917904900899?text=Hello%20Sai%20Gift%20Travels,%20I%20want%20to%20enquire%20about%20a%20car%20booking"
+    class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
+    💬
+  </a>
+
+  <!-- Mobile Floating Call Button -->
+  <a href="tel:7904900899" class="mobile-call-float" aria-label="Call Now" title="Call Now">
+    📞
+  </a>
 
   <script src="script.js"></script>
 </body>
