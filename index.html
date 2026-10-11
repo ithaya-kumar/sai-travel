@@ -818,37 +818,131 @@
           </div>
         </div>
 
-        <!-- Booking Form Container -->
-        <div class="contact__container reveal-up">
-          <form class="contact__form" id="contactForm">
-            <div class="form-group">
-              <input type="text" id="name" placeholder="YOUR NAME" required />
-            </div>
-            <div class="form-group">
-              <input type="tel" id="phone" placeholder="PHONE NUMBER (E.G. 9876543210)" required />
-            </div>
-            <div class="form-group">
-              <input type="text" id="pickup" placeholder="PICKUP LOCATION (E.G. MADURAI)" required />
-            </div>
-            <div class="form-group">
-              <input type="text" id="destination" placeholder="DESTINATION (E.G. RAMESWARAM, KODAIKANAL)" required />
-            </div>
-            <div class="form-group">
-              <input type="date" id="date" placeholder="DATE OF JOURNEY" required />
-            </div>
-            <div class="form-group">
-              <input type="text" id="vehicle" placeholder="VEHICLE (SEDAN / SUV / HATCHBACK / TEMPO)" />
-            </div>
-            <div class="form-group form-group--full">
-              <textarea id="message" placeholder="EXTRA REQUIREMENTS (A/C OR NON-A/C, NUMBER OF PASSENGERS)" rows="3"></textarea>
-            </div>
-            <button type="submit" class="btn btn--primary">REQUEST BOOKING <span>→</span></button>
-          </form>
+        <!-- Luxury Booking Card Container -->
+        <div class="booking-card reveal-up">
+          <div class="booking-card__top-bar"></div>
+          
+          <div class="booking-card__header">
+            <span class="booking-card__badge">⚡ FAST 60-SEC CAB BOOKING</span>
+            <h3 class="booking-card__title">Reserve Your Car or Tour Package</h3>
+            <p class="booking-card__subtitle">
+              Instant confirmation • 24/7 on-call dispatch from Madurai • Pay after your journey
+            </p>
+          </div>
 
-          <div class="contact__success" id="contactSuccess" hidden>
-            <div class="success-icon">✓</div>
-            <h3>Thank You!</h3>
-            <p>Your booking enquiry has been received. S.P. Nirmal Pandi will call you back shortly. For urgent rides, please call <strong>7904900899</strong> directly.</p>
+          <div class="booking-card__body">
+            <form class="booking-form" id="contactForm">
+              
+              <!-- Name -->
+              <div class="form-field">
+                <label class="form-label" for="name">👤 Your Full Name</label>
+                <div class="input-wrap">
+                  <span class="input-icon">👤</span>
+                  <input type="text" id="name" placeholder="E.g. Ramesh Kumar" required />
+                </div>
+              </div>
+
+              <!-- Phone -->
+              <div class="form-field">
+                <label class="form-label" for="phone">📱 Contact Number</label>
+                <div class="input-wrap">
+                  <span class="input-icon">📞</span>
+                  <input type="tel" id="phone" placeholder="E.g. 98765 43210" required />
+                </div>
+              </div>
+
+              <!-- Pickup -->
+              <div class="form-field">
+                <label class="form-label" for="pickup">📍 Pickup Location</label>
+                <div class="input-wrap">
+                  <span class="input-icon">📍</span>
+                  <input type="text" id="pickup" placeholder="E.g. Madurai Airport / Railway Station" required />
+                </div>
+              </div>
+
+              <!-- Destination -->
+              <div class="form-field">
+                <label class="form-label" for="destination">🏁 Destination / Tour</label>
+                <div class="input-wrap">
+                  <span class="input-icon">🏁</span>
+                  <input type="text" id="destination" placeholder="E.g. Rameswaram, Kodaikanal, Local" required />
+                </div>
+              </div>
+
+              <!-- Journey Date -->
+              <div class="form-field">
+                <label class="form-label" for="date">📅 Date of Journey</label>
+                <div class="input-wrap">
+                  <span class="input-icon">📅</span>
+                  <input type="date" id="date" required />
+                </div>
+              </div>
+
+              <!-- Vehicle Selection Dropdown -->
+              <div class="form-field">
+                <label class="form-label" for="vehicleSelect">🚗 Vehicle Choice</label>
+                <div class="input-wrap">
+                  <span class="input-icon">🚗</span>
+                  <select id="vehicleSelect" required>
+                    <option value="" disabled selected>Select Car Category</option>
+                    <option value="Sedan (Swift Dzire / Etios)">Comfort Sedan (Dzire / Etios - 4 Seater)</option>
+                    <option value="SUV (Innova Crysta / Ertiga)">Premium SUV (Innova / Ertiga - 6/7 Seater)</option>
+                    <option value="Hatchback (Swift / WagonR)">Economy Hatchback (Swift / WagonR - 4 Seater)</option>
+                    <option value="Tempo Traveller (12-17 Seater)">Tempo Traveller (12 to 17 Seater Luxury Van)</option>
+                    <option value="Custom Tour Package">Custom Tour Package Enquiry</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- AC Preference -->
+              <div class="form-field form-field--full">
+                <label class="form-label">❄️ Air Conditioning Preference</label>
+                <div class="radio-pill-group">
+                  <label class="radio-pill active" id="acOption1">
+                    <input type="radio" name="acPreference" value="A/C Car" checked />
+                    ❄️ A/C Vehicle (Recommended)
+                  </label>
+                  <label class="radio-pill" id="acOption2">
+                    <input type="radio" name="acPreference" value="Non A/C Car" />
+                    🍃 Non-A/C Vehicle (Budget)
+                  </label>
+                </div>
+              </div>
+
+              <!-- Special Requirements -->
+              <div class="form-field form-field--full">
+                <label class="form-label" for="message">📝 Special Requirements / Number of Passengers</label>
+                <textarea id="message" placeholder="E.g. 4 Adults + 1 Child, need pickup at 5:00 AM, airport luggage assistance..." rows="3"></textarea>
+              </div>
+
+              <!-- Submit Actions -->
+              <div class="form-actions">
+                <button type="submit" class="btn--booking">
+                  <span>🚀 REQUEST BOOKING NOW</span>
+                  <span>→</span>
+                </button>
+                
+                <a href="https://wa.me/917904900899?text=Hello%20Sai%20Gift%20Travels,%20I%20want%20to%20book%20a%20car"
+                  target="_blank" class="btn--whatsapp-action">
+                  <span>💬 BOOK INSTANTLY VIA WHATSAPP (+91 7904900899)</span>
+                </a>
+              </div>
+
+              <!-- Trust Highlights Row -->
+              <div class="booking-trust-row">
+                <span class="trust-badge-item">🛡️ Zero Advance Needed</span>
+                <span class="trust-badge-item">⏱️ Instant 24/7 Confirmation</span>
+                <span class="trust-badge-item">👨‍✈️ Verified Experienced Drivers</span>
+                <span class="trust-badge-item">🚕 Doorstep Pickup in Madurai</span>
+              </div>
+
+            </form>
+
+            <div class="contact__success" id="contactSuccess" hidden>
+              <div class="success-icon">✓</div>
+              <h3>Thank You!</h3>
+              <p>Your booking enquiry has been received. <strong>S.P. Nirmal Pandi</strong> from Sai Gift Travels will call you within 5 minutes to confirm your ride.<br />For urgent rides, please call <strong>7904900899</strong> directly.</p>
+            </div>
           </div>
         </div>
       </div>
