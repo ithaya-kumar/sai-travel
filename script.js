@@ -368,55 +368,35 @@ function initializeContactForm() {
   
   if (!form) return;
 
-  // Radio Pill Toggle
-  const radioPills = document.querySelectorAll('.radio-pill');
-  radioPills.forEach(pill => {
-    pill.addEventListener('click', () => {
-      radioPills.forEach(p => p.classList.remove('active'));
-      pill.classList.add('active');
-      const radioInput = pill.querySelector('input[type="radio"]');
-      if (radioInput) radioInput.checked = true;
-    });
-  });
-
-  // Dynamic WhatsApp prefill on click
-  const whatsappBtn = document.querySelector('.btn--whatsapp-action');
-  if (whatsappBtn) {
-    whatsappBtn.addEventListener('click', (e) => {
-      const name = document.getElementById('name')?.value || '';
-      const phone = document.getElementById('phone')?.value || '';
-      const pickup = document.getElementById('pickup')?.value || '';
-      const dest = document.getElementById('destination')?.value || '';
-      const date = document.getElementById('date')?.value || '';
-      const vehicle = document.getElementById('vehicleSelect')?.value || '';
-      const acOption = document.querySelector('input[name="acPreference"]:checked')?.value || 'A/C';
-
-      let text = `Hello Sai Gift Travels, I would like to book a cab:%0A`;
-      if (name) text += `*Name:* ${encodeURIComponent(name)}%0A`;
-      if (phone) text += `*Phone:* ${encodeURIComponent(phone)}%0A`;
-      if (pickup) text += `*Pickup:* ${encodeURIComponent(pickup)}%0A`;
-      if (dest) text += `*Destination:* ${encodeURIComponent(dest)}%0A`;
-      if (date) text += `*Date:* ${encodeURIComponent(date)}%0A`;
-      if (vehicle) text += `*Vehicle:* ${encodeURIComponent(vehicle)}%0A`;
-      text += `*Preference:* ${encodeURIComponent(acOption)}`;
-
-      whatsappBtn.href = `https://wa.me/917904900899?text=${text}`;
-    });
-  }
-
   // Form submission handler
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     
-    const btn = form.querySelector('button[type="submit"]');
-    const originalText = btn.innerHTML;
-    btn.innerHTML = `<span>⏳ CONFIRMING BOOKING...</span>`;
-    btn.style.opacity = '0.8';
+    const name = document.getElementById('name')?.value || '';
+    const email = document.getElementById('email')?.value || '';
+    const message = document.getElementById('message')?.value || '';
     
+    const btn = form.querySelector('button[type="submit"]');
+    if (btn) {
+      btn.innerHTML = `<span>Sending...</span>`;
+      btn.style.opacity = '0.85';
+      btn.disabled = true;
+    }
+
+    // Prefill WhatsApp link with message details
+    const waLink = document.querySelector('.contact-success-wa');
+    if (waLink) {
+      const waText = `Hello Sai Gift Travels,%0A*Name:* ${encodeURIComponent(name)}%0A*Email:* ${encodeURIComponent(email)}%0A*Message:* ${encodeURIComponent(message)}`;
+      waLink.href = `https://wa.me/917904900899?text=${waText}`;
+    }
+
     setTimeout(() => {
       form.style.display = 'none';
-      successMsg.removeAttribute('hidden');
-      successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }, 900);
+      if (successMsg) {
+        successMsg.removeAttribute('hidden');
+        successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }, 600);
   });
 }
+
