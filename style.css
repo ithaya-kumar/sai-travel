@@ -2418,4 +2418,17 @@ body.has-custom-cursor .cursor {
   transform: translateY(-2px);
 }
 
+.btn--facebook {
+  background-color: #ffffff;
+  color: #1e293b;
+  border: 1px solid rgba(24, 119, 242, 0.25);
+}
+
+.btn--facebook:hover {
+  background-color: #f0f7ff;
+  border-color: #1877f2;
+  transform: translateY(-2px);
+}
+
+
 
