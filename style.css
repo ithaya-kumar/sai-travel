@@ -2406,3 +2406,16 @@ body.has-custom-cursor .cursor {
   transform: translateY(-2px);
 }
 
+.btn--youtube {
+  background-color: #ffffff;
+  color: #1e293b;
+  border: 1px solid rgba(255, 0, 0, 0.2);
+}
+
+.btn--youtube:hover {
+  background-color: #fff1f2;
+  border-color: #ff0000;
+  transform: translateY(-2px);
+}
+
+
