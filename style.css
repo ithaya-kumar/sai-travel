@@ -2430,5 +2430,18 @@ body.has-custom-cursor .cursor {
   transform: translateY(-2px);
 }
 
+.btn--instagram {
+  background-color: #ffffff;
+  color: #1e293b;
+  border: 1px solid rgba(214, 36, 159, 0.25);
+}
+
+.btn--instagram:hover {
+  background-color: #fdf2f8;
+  border-color: #d6249f;
+  transform: translateY(-2px);
+}
+
+
 
 
