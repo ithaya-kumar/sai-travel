@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initializeLightbox();
   initializeMapMarkers();
   initializeContactForm();
+  initializeReviewForm();
 });
 
 /* ============================================================
@@ -400,3 +401,60 @@ function initializeContactForm() {
   });
 }
 
+
+/* ============================================================
+   REVIEW FORM
+   ============================================================ */
+function initializeReviewForm() {
+  const stars = document.querySelectorAll('.star-btn');
+  const ratingInput = document.getElementById('reviewRating');
+
+  stars.forEach(star => {
+    star.addEventListener('mouseover', () => {
+      const val = parseInt(star.dataset.val);
+      stars.forEach(s => {
+        s.classList.toggle('active', parseInt(s.dataset.val) <= val);
+      });
+    });
+
+    star.addEventListener('mouseout', () => {
+      const selected = parseInt(ratingInput ? ratingInput.value : 0);
+      stars.forEach(s => {
+        s.classList.toggle('active', parseInt(s.dataset.val) <= selected);
+      });
+    });
+
+    star.addEventListener('click', () => {
+      const val = star.dataset.val;
+      if (ratingInput) ratingInput.value = val;
+      stars.forEach(s => {
+        s.classList.toggle('active', parseInt(s.dataset.val) <= parseInt(val));
+      });
+    });
+  });
+}
+
+function submitReview(e) {
+  e.preventDefault();
+  const name    = (document.getElementById('reviewName')?.value || '').trim();
+  const rating  = document.getElementById('reviewRating')?.value || '0';
+  const comment = (document.getElementById('reviewComment')?.value || '').trim();
+
+  if (!name || rating === '0' || !comment) {
+    alert('?????, Rating ??????? ??????? ?????????!');
+    return;
+  }
+
+  const starsStr = '?'.repeat(parseInt(rating)) + '?'.repeat(5 - parseInt(rating));
+  const message  = '*Sai Gift Travels - Customer Review*%0A%0A' +
+                   '*?????:* ' + encodeURIComponent(name) + '%0A' +
+                   '*Rating:* ' + starsStr + ' (' + rating + '/5)%0A' +
+                   '*???????:* ' + encodeURIComponent(comment);
+
+  window.open('https://wa.me/917904900899?text=' + message, '_blank');
+
+  const form    = document.getElementById('reviewForm');
+  const success = document.getElementById('reviewSuccess');
+  if (form)    form.style.display    = 'none';
+  if (success) success.style.display = 'block';
+}

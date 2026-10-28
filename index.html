@@ -495,6 +495,45 @@
             </div>
           </div>
         </div>
+
+        <!-- ── Customer Review Form ── -->
+        <div class="review-form-wrap reveal-up" style="margin-top:3.5rem;">
+          <div class="review-form-card">
+            <div class="review-form-header">
+              <span style="font-size:0.75rem;letter-spacing:0.15em;color:var(--accent);font-weight:600;text-transform:uppercase;">SHARE YOUR EXPERIENCE</span>
+              <h3 style="font-family:var(--font-serif);font-size:1.5rem;font-weight:700;color:#fff;margin:0.5rem 0 0.25rem;">Write a Review</h3>
+              <p style="color:rgba(255,255,255,0.55);font-size:0.9rem;margin:0;">உங்கள் அனுபவத்தை எங்களுடன் பகிருங்கள்</p>
+            </div>
+
+            <form id="reviewForm" class="review-form-body" onsubmit="submitReview(event)">
+              <div class="review-field">
+                <input type="text" id="reviewName" placeholder="உங்கள் பெயர் (Your Name)" class="review-input" required />
+              </div>
+              <div class="review-field">
+                <label style="color:rgba(255,255,255,0.65);font-size:0.85rem;margin-bottom:0.5rem;display:block;">Rating தேர்வு செய்யுங்கள்</label>
+                <div class="star-rating-select" id="starRating">
+                  <span class="star-btn" data-val="1">&#9733;</span>
+                  <span class="star-btn" data-val="2">&#9733;</span>
+                  <span class="star-btn" data-val="3">&#9733;</span>
+                  <span class="star-btn" data-val="4">&#9733;</span>
+                  <span class="star-btn" data-val="5">&#9733;</span>
+                </div>
+                <input type="hidden" id="reviewRating" value="0" />
+              </div>
+              <div class="review-field">
+                <textarea id="reviewComment" placeholder="உங்கள் கருத்தை இங்கே எழுதுங்கள்... (Write your feedback)" class="review-input review-textarea" rows="4" required></textarea>
+              </div>
+              <button type="submit" class="review-submit-btn">&#9733; Review அனுப்பு</button>
+            </form>
+
+            <div id="reviewSuccess" style="display:none;text-align:center;padding:2.5rem 1rem;">
+              <div style="font-size:3.5rem;">&#127881;</div>
+              <h4 style="color:#fff;font-family:var(--font-serif);font-size:1.3rem;margin:0.75rem 0 0.4rem;">நன்றி! உங்கள் Review கிடைத்தது.</h4>
+              <p style="color:rgba(255,255,255,0.6);font-size:0.9rem;">WhatsApp-ல் உங்கள் review அனுப்பப்பட்டது.</p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
