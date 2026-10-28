@@ -436,20 +436,18 @@ function initializeReviewForm() {
 
 function submitReview(e) {
   e.preventDefault();
-  const name    = (document.getElementById('reviewName')?.value || '').trim();
   const rating  = document.getElementById('reviewRating')?.value || '0';
   const comment = (document.getElementById('reviewComment')?.value || '').trim();
 
-  if (!name || rating === '0' || !comment) {
-    alert('?????, Rating ??????? ??????? ?????????!');
+  if (rating === '0' || !comment) {
+    alert('Rating மற்றும் கருத்து கொடுங்கள்!');
     return;
   }
 
-  const starsStr = '?'.repeat(parseInt(rating)) + '?'.repeat(5 - parseInt(rating));
+  const starsStr = '★'.repeat(parseInt(rating)) + '☆'.repeat(5 - parseInt(rating));
   const message  = '*Sai Gift Travels - Customer Review*%0A%0A' +
-                   '*?????:* ' + encodeURIComponent(name) + '%0A' +
                    '*Rating:* ' + starsStr + ' (' + rating + '/5)%0A' +
-                   '*???????:* ' + encodeURIComponent(comment);
+                   '*கருத்து:* ' + encodeURIComponent(comment);
 
   window.open('https://wa.me/917904900899?text=' + message, '_blank');
 
@@ -458,3 +456,4 @@ function submitReview(e) {
   if (form)    form.style.display    = 'none';
   if (success) success.style.display = 'block';
 }
+
