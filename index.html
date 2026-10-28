@@ -432,7 +432,7 @@
           </p>
         </div>
 
-        <div class="reviews-grid">
+        <div class="reviews-grid" id="reviewsGrid">
           <!-- Review 1 -->
           <div class="review-card reveal-up">
             <div class="review-card__stars">★★★★★</div>
@@ -506,6 +506,10 @@
             </div>
 
             <form id="reviewForm" class="review-form-body" onsubmit="submitReview(event)">
+              <div class="review-field">
+                <label for="reviewName" style="color:rgba(255,255,255,0.65);font-size:0.85rem;margin-bottom:0.5rem;display:block;">உங்கள் பெயர் (Your Name)</label>
+                <input type="text" id="reviewName" placeholder="உதாரணம்: Vignesh" class="review-input" required autocomplete="name" />
+              </div>
 
               <div class="review-field">
                 <label style="color:rgba(255,255,255,0.65);font-size:0.85rem;margin-bottom:0.5rem;display:block;">Rating தேர்வு செய்யுங்கள்</label>
@@ -516,18 +520,20 @@
                   <span class="star-btn" data-val="4">&#9733;</span>
                   <span class="star-btn" data-val="5">&#9733;</span>
                 </div>
-                <input type="hidden" id="reviewRating" value="0" />
+                <input type="hidden" id="reviewRating" value="5" />
               </div>
               <div class="review-field">
-                <textarea id="reviewComment" placeholder="உங்கள் கருத்தை இங்கே எழுதுங்கள்... (Write your feedback)" class="review-input review-textarea" rows="4" required></textarea>
+                <label for="reviewComment" style="color:rgba(255,255,255,0.65);font-size:0.85rem;margin-bottom:0.5rem;display:block;">உங்கள் கருத்து (Feedback)</label>
+                <textarea id="reviewComment" placeholder="உங்கள் பயண அனுபவத்தை இங்கே எழுதுங்கள்..." class="review-input review-textarea" rows="4" required></textarea>
               </div>
               <button type="submit" class="review-submit-btn">Submit</button>
             </form>
 
             <div id="reviewSuccess" style="display:none;text-align:center;padding:2.5rem 1rem;">
-              <div style="font-size:3.5rem;">&#127881;</div>
-              <h4 style="color:#fff;font-family:var(--font-serif);font-size:1.3rem;margin:0.75rem 0 0.4rem;">நன்றி! உங்கள் Review கிடைத்தது.</h4>
-              <p style="color:rgba(255,255,255,0.6);font-size:0.9rem;">WhatsApp-ல் உங்கள் review அனுப்பப்பட்டது.</p>
+              <div style="font-size:3.5rem;">🎉</div>
+              <h4 style="color:#fff;font-family:var(--font-serif);font-size:1.3rem;margin:0.75rem 0 0.4rem;">நன்றி! உங்கள் Review சேர்க்கப்பட்டது.</h4>
+              <p style="color:rgba(255,255,255,0.6);font-size:0.9rem;">உங்கள் Feedback மேலே உள்ள "WHAT OUR CLIENTS SAY" பக்கத்தில் உடனடியாக சேர்க்கப்பட்டுள்ளது.</p>
+              <button type="button" onclick="resetReviewForm()" class="review-submit-btn" style="margin-top:1.2rem;display:inline-block;padding:0.6rem 1.6rem;font-size:0.9rem;">+ இன்னொரு Review பதிவிட</button>
             </div>
           </div>
         </div>

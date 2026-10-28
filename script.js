@@ -403,11 +403,16 @@ function initializeContactForm() {
 
 
 /* ============================================================
-   REVIEW FORM
+   REVIEW FORM & LOCAL STORAGE REVIEWS
    ============================================================ */
 function initializeReviewForm() {
   const stars = document.querySelectorAll('.star-btn');
   const ratingInput = document.getElementById('reviewRating');
+
+  // Pre-select 5 stars visually by default if set to 5
+  if (ratingInput && ratingInput.value === '5') {
+    stars.forEach(s => s.classList.add('active'));
+  }
 
   stars.forEach(star => {
     star.addEventListener('mouseover', () => {
@@ -432,28 +437,146 @@ function initializeReviewForm() {
       });
     });
   });
+
+  // Load previously submitted reviews from localStorage
+  loadStoredReviews();
+}
+
+function loadStoredReviews() {
+  const grid = document.getElementById('reviewsGrid') || document.querySelector('.reviews-grid');
+  if (!grid) return;
+
+  try {
+    const stored = JSON.parse(localStorage.getItem('sai_travels_reviews') || '[]');
+    // Render from oldest to newest so newest ends up at the top
+    stored.slice().reverse().forEach(review => {
+      renderReviewCard(review, false);
+    });
+  } catch (err) {
+    console.error('Error loading stored reviews:', err);
+  }
+}
+
+function renderReviewCard(review, isNew = false) {
+  const grid = document.getElementById('reviewsGrid') || document.querySelector('.reviews-grid');
+  if (!grid) return;
+
+  const initial = (review.name && review.name.trim().charAt(0).toUpperCase()) || 'C';
+  const ratingNum = Math.min(5, Math.max(1, parseInt(review.rating) || 5));
+  const starsStr = '★'.repeat(ratingNum) + '☆'.repeat(5 - ratingNum);
+  const dateStr = review.date || 'Verified Client';
+
+  const card = document.createElement('div');
+  card.className = 'review-card reveal-up active';
+  if (isNew) {
+    card.style.borderColor = 'rgba(221, 71, 70, 0.6)';
+    card.style.boxShadow = '0 10px 30px rgba(221, 71, 70, 0.25)';
+    card.style.transition = 'all 0.5s ease';
+  }
+
+  card.innerHTML = `
+    <div class="review-card__stars">${starsStr}</div>
+    <p class="review-card__text">"${escapeHtml(review.comment)}"</p>
+    <div class="review-card__author">
+      <div class="review-card__avatar">${initial}</div>
+      <div class="review-card__info">
+        <h4>${escapeHtml(review.name)}</h4>
+        <span>${escapeHtml(dateStr)} • Verified Client</span>
+      </div>
+    </div>
+  `;
+
+  // Prepend to reviews grid so the newly submitted review appears right at the top
+  grid.prepend(card);
+}
+
+function escapeHtml(text) {
+  const div = document.createElement('div');
+  div.textContent = text || '';
+  return div.innerHTML;
 }
 
 function submitReview(e) {
   e.preventDefault();
-  const rating  = document.getElementById('reviewRating')?.value || '0';
-  const comment = (document.getElementById('reviewComment')?.value || '').trim();
+  const nameInput = document.getElementById('reviewName');
+  const ratingInput = document.getElementById('reviewRating');
+  const commentInput = document.getElementById('reviewComment');
 
-  if (rating === '0' || !comment) {
-    alert('Rating மற்றும் கருத்து கொடுங்கள்!');
+  const name = (nameInput?.value || '').trim();
+  const rating = ratingInput?.value || '0';
+  const comment = (commentInput?.value || '').trim();
+
+  if (!name) {
+    alert('தயவுசெய்து உங்கள் பெயரை உள்ளிடவும்! (Please enter your name)');
+    nameInput?.focus();
     return;
   }
 
-  const starsStr = '★'.repeat(parseInt(rating)) + '☆'.repeat(5 - parseInt(rating));
-  const message  = '*Sai Gift Travels - Customer Review*%0A%0A' +
-                   '*Rating:* ' + starsStr + ' (' + rating + '/5)%0A' +
-                   '*கருத்து:* ' + encodeURIComponent(comment);
+  if (rating === '0' || !rating) {
+    alert('தயவுசெய்து Star Rating தேர்வு செய்யவும்!');
+    return;
+  }
 
-  window.open('https://wa.me/917904900899?text=' + message, '_blank');
+  if (!comment) {
+    alert('தயவுசெய்து உங்கள் கருத்தை உள்ளிடவும்! (Please enter your feedback)');
+    commentInput?.focus();
+    return;
+  }
 
-  const form    = document.getElementById('reviewForm');
+  const now = new Date();
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const dateStr = `${months[now.getMonth()]} ${now.getFullYear()}`;
+
+  const newReview = {
+    name: name,
+    rating: parseInt(rating),
+    comment: comment,
+    date: dateStr
+  };
+
+  // 1. Save to localStorage
+  try {
+    const stored = JSON.parse(localStorage.getItem('sai_travels_reviews') || '[]');
+    stored.unshift(newReview);
+    localStorage.setItem('sai_travels_reviews', JSON.stringify(stored));
+  } catch (err) {
+    console.error('Error saving review to localStorage:', err);
+  }
+
+  // 2. Add review card directly to "WHAT OUR CLIENTS SAY" page grid
+  renderReviewCard(newReview, true);
+
+  // 3. Show success message
+  const form = document.getElementById('reviewForm');
   const success = document.getElementById('reviewSuccess');
-  if (form)    form.style.display    = 'none';
+  if (form) form.style.display = 'none';
   if (success) success.style.display = 'block';
+
+  // 4. Smooth scroll up to "WHAT OUR CLIENTS SAY" section so customer sees their review live
+  const reviewsSection = document.getElementById('reviews') || document.getElementById('reviewsGrid');
+  if (reviewsSection) {
+    reviewsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 }
+
+function resetReviewForm() {
+  const form = document.getElementById('reviewForm');
+  const success = document.getElementById('reviewSuccess');
+  const nameInput = document.getElementById('reviewName');
+  const ratingInput = document.getElementById('reviewRating');
+  const commentInput = document.getElementById('reviewComment');
+  const stars = document.querySelectorAll('.star-btn');
+
+  if (nameInput) nameInput.value = '';
+  if (ratingInput) ratingInput.value = '5';
+  if (commentInput) commentInput.value = '';
+  stars.forEach(s => s.classList.add('active'));
+
+  if (success) success.style.display = 'none';
+  if (form) {
+    form.style.display = 'flex';
+    nameInput?.focus();
+  }
+}
+
 
