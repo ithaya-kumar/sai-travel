@@ -403,8 +403,32 @@ function initializeContactForm() {
 
 
 /* ============================================================
-   REVIEW FORM & LOCAL STORAGE REVIEWS
+   FIREBASE FIRESTORE & REVIEWS SYSTEM
    ============================================================ */
+const firebaseConfig = {
+  projectId: "number-game-61376",
+  appId: "1:654574401281:web:0d3b8e3e14597b5f184d00",
+  storageBucket: "number-game-61376.firebasestorage.app",
+  apiKey: "AIzaSyD_EgPlJlJDMiTqskXINqd3zyW67gmJHMo",
+  authDomain: "number-game-61376.firebaseapp.com",
+  messagingSenderId: "654574401281",
+  measurementId: "G-RPERBHJENG"
+};
+
+let firestoreDb = null;
+try {
+  if (typeof firebase !== 'undefined' && firebase.initializeApp) {
+    if (!firebase.apps || !firebase.apps.length) {
+      firebase.initializeApp(firebaseConfig);
+    }
+    firestoreDb = firebase.firestore();
+  }
+} catch (err) {
+  console.warn('Firebase init:', err);
+}
+
+const loadedReviewKeys = new Set();
+
 function initializeReviewForm() {
   const stars = document.querySelectorAll('.star-btn');
   const ratingInput = document.getElementById('reviewRating');
@@ -438,22 +462,46 @@ function initializeReviewForm() {
     });
   });
 
-  // Load previously submitted reviews from localStorage
-  loadStoredReviews();
+  // Listen & load reviews from Firebase Firestore (with localStorage fallback)
+  listenToFirebaseReviews();
 }
 
-function loadStoredReviews() {
-  const grid = document.getElementById('reviewsGrid') || document.querySelector('.reviews-grid');
-  if (!grid) return;
+function listenToFirebaseReviews() {
+  // 1. First, load any cached reviews from localStorage for instant display
+  try {
+    const cached = JSON.parse(localStorage.getItem('sai_travels_reviews') || '[]');
+    cached.slice().reverse().forEach(r => {
+      const key = `${r.name}_${r.comment}_${r.rating}`;
+      if (!loadedReviewKeys.has(key)) {
+        loadedReviewKeys.add(key);
+        renderReviewCard(r, false);
+      }
+    });
+  } catch (e) {
+    console.error('localStorage load error:', e);
+  }
+
+  // 2. Connect to Cloud Firestore for live real-time reviews from all users
+  if (!firestoreDb) return;
 
   try {
-    const stored = JSON.parse(localStorage.getItem('sai_travels_reviews') || '[]');
-    // Render from oldest to newest so newest ends up at the top
-    stored.slice().reverse().forEach(review => {
-      renderReviewCard(review, false);
-    });
+    firestoreDb.collection('reviews')
+      .onSnapshot((snapshot) => {
+        snapshot.docChanges().forEach((change) => {
+          if (change.type === 'added') {
+            const data = change.doc.data();
+            const key = change.doc.id || `${data.name}_${data.comment}_${data.rating}`;
+            if (!loadedReviewKeys.has(key)) {
+              loadedReviewKeys.add(key);
+              renderReviewCard(data, false);
+            }
+          }
+        });
+      }, (error) => {
+        console.warn('Firestore live listener notice:', error);
+      });
   } catch (err) {
-    console.error('Error loading stored reviews:', err);
+    console.warn('Firestore connect error:', err);
   }
 }
 
@@ -469,8 +517,8 @@ function renderReviewCard(review, isNew = false) {
   const card = document.createElement('div');
   card.className = 'review-card reveal-up active';
   if (isNew) {
-    card.style.borderColor = 'rgba(221, 71, 70, 0.6)';
-    card.style.boxShadow = '0 10px 30px rgba(221, 71, 70, 0.25)';
+    card.style.borderColor = 'rgba(221, 71, 70, 0.7)';
+    card.style.boxShadow = '0 10px 30px rgba(221, 71, 70, 0.28)';
     card.style.transition = 'all 0.5s ease';
   }
 
@@ -486,7 +534,7 @@ function renderReviewCard(review, isNew = false) {
     </div>
   `;
 
-  // Prepend to reviews grid so the newly submitted review appears right at the top
+  // Prepend to reviews grid so the newly submitted review appears at the top
   grid.prepend(card);
 }
 
@@ -496,11 +544,12 @@ function escapeHtml(text) {
   return div.innerHTML;
 }
 
-function submitReview(e) {
+async function submitReview(e) {
   e.preventDefault();
   const nameInput = document.getElementById('reviewName');
   const ratingInput = document.getElementById('reviewRating');
   const commentInput = document.getElementById('reviewComment');
+  const submitBtn = e.target.querySelector('button[type="submit"]');
 
   const name = (nameInput?.value || '').trim();
   const rating = ratingInput?.value || '0';
@@ -523,36 +572,63 @@ function submitReview(e) {
     return;
   }
 
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.innerText = 'சேமிக்கப்படுகிறது...';
+  }
+
   const now = new Date();
   const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   const dateStr = `${months[now.getMonth()]} ${now.getFullYear()}`;
 
-  const newReview = {
+  const reviewData = {
     name: name,
     rating: parseInt(rating),
     comment: comment,
     date: dateStr
   };
 
-  // 1. Save to localStorage
+  const key = `${name}_${comment}_${rating}`;
+
+  // 1. Save to Firebase Firestore Cloud Database
+  if (firestoreDb) {
+    try {
+      await firestoreDb.collection('reviews').add({
+        ...reviewData,
+        createdAt: firebase.firestore.FieldValue ? firebase.firestore.FieldValue.serverTimestamp() : new Date()
+      });
+    } catch (err) {
+      console.warn('Firestore write warning:', err);
+    }
+  }
+
+  // 2. Also cache in localStorage
   try {
     const stored = JSON.parse(localStorage.getItem('sai_travels_reviews') || '[]');
-    stored.unshift(newReview);
+    stored.unshift(reviewData);
     localStorage.setItem('sai_travels_reviews', JSON.stringify(stored));
   } catch (err) {
     console.error('Error saving review to localStorage:', err);
   }
 
-  // 2. Add review card directly to "WHAT OUR CLIENTS SAY" page grid
-  renderReviewCard(newReview, true);
+  // 3. Immediately render card if not already added by Firestore listener
+  if (!loadedReviewKeys.has(key)) {
+    loadedReviewKeys.add(key);
+    renderReviewCard(reviewData, true);
+  }
 
-  // 3. Show success message
+  // 4. Show success message
   const form = document.getElementById('reviewForm');
   const success = document.getElementById('reviewSuccess');
   if (form) form.style.display = 'none';
   if (success) success.style.display = 'block';
 
-  // 4. Smooth scroll up to "WHAT OUR CLIENTS SAY" section so customer sees their review live
+  if (submitBtn) {
+    submitBtn.disabled = false;
+    submitBtn.innerText = 'Submit';
+  }
+
+  // 5. Smooth scroll up to "WHAT OUR CLIENTS SAY" section
   const reviewsSection = document.getElementById('reviews') || document.getElementById('reviewsGrid');
   if (reviewsSection) {
     reviewsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
