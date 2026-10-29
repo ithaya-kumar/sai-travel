@@ -487,6 +487,13 @@ function listenToFirebaseReviews() {
   try {
     firestoreDb.collection('reviews')
       .onSnapshot((snapshot) => {
+        if (snapshot.empty) {
+          // If Firestore is empty, clear local storage
+          localStorage.removeItem('sai_travels_reviews');
+          loadedReviewKeys.clear();
+          return;
+        }
+
         snapshot.docChanges().forEach((change) => {
           if (change.type === 'added') {
             const data = change.doc.data();
@@ -508,6 +515,10 @@ function listenToFirebaseReviews() {
 function renderReviewCard(review, isNew = false) {
   const grid = document.getElementById('reviewsGrid') || document.querySelector('.reviews-grid');
   if (!grid) return;
+
+  // Remove the 'No reviews yet' placeholder if present
+  const notice = document.getElementById('noReviewsNotice');
+  if (notice) notice.remove();
 
   const initial = (review.name && review.name.trim().charAt(0).toUpperCase()) || 'C';
   const ratingNum = Math.min(5, Math.max(1, parseInt(review.rating) || 5));
