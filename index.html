@@ -9,7 +9,9 @@
   <meta name="keywords"
     content="Sai Gift Travels, Madurai Car Rental, Taxi Service Madurai, Airport Transfers, Out of Station Cabs, Tour Packages, S.P. Nirmal Pandi" />
   <title>Sai Gift Travels | Madurai | Car Rental & Tour Packages</title>
-  <link rel="stylesheet" href="style.css?v=4" />
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
+  <meta name="theme-color" content="#141f3e" />
+  <link rel="stylesheet" href="style.css?v=5" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -57,10 +59,9 @@
         <ul class="navbar__links">
           <li><a href="#home" class="navbar__link">HOME</a></li>
           <li><a href="#services" class="navbar__link">SERVICES</a></li>
-
-
-          <li><a href="#about" class="navbar__link">ABOUT</a></li>
+          <li><a href="#gallery" class="navbar__link">GALLERY</a></li>
           <li><a href="#reviews" class="navbar__link">REVIEWS</a></li>
+          <li><a href="#about" class="navbar__link">ABOUT</a></li>
           <li><a href="#contact" class="navbar__link">CONTACT</a></li>
         </ul>
       </nav>
@@ -81,15 +82,14 @@
       <ul class="mobile-menu__links">
         <li><a href="#home" class="mobile-menu__link">HOME</a></li>
         <li><a href="#services" class="mobile-menu__link">SERVICES</a></li>
-
-
-        <li><a href="#about" class="mobile-menu__link">ABOUT US</a></li>
+        <li><a href="#gallery" class="mobile-menu__link">GALLERY</a></li>
         <li><a href="#reviews" class="mobile-menu__link">REVIEWS</a></li>
+        <li><a href="#about" class="mobile-menu__link">ABOUT US</a></li>
         <li><a href="#contact" class="mobile-menu__link">CONTACT</a></li>
       </ul>
       <div style="margin-top: 2rem; display: flex; flex-direction: column; gap: 0.8rem; padding: 0 2rem;">
         <a href="tel:7904900899" class="btn btn--primary" style="width: 100%; text-align: center;">CALL 7904900899</a>
-        <a href="https://wa.me/917904900899" class="btn btn--whatsapp"
+        <a href="https://wa.me/917904900899" target="_blank" rel="noopener noreferrer" class="btn btn--whatsapp"
           style="width: 100%; text-align: center; display: flex; align-items: center; justify-content: center; gap: 0.6rem;">
           <img src="assets/images/whatsapp.svg" alt="WhatsApp" class="btn-logo-img" />
           WHATSAPP BOOKING
@@ -99,18 +99,18 @@
           <img src="assets/images/email.svg" alt="Email" class="btn-logo-img" />
           EMAIL US
         </a>
-        <a href="https://www.facebook.com/share/1XkweLXCxv/" target="_blank" class="btn btn--facebook"
+        <a href="https://www.facebook.com/share/1XkweLXCxv/" target="_blank" rel="noopener noreferrer" class="btn btn--facebook"
           style="width: 100%; text-align: center; display: flex; align-items: center; justify-content: center; gap: 0.6rem;">
           <img src="assets/images/facebook.svg" alt="Facebook" class="btn-logo-img" />
           FACEBOOK PAGE
         </a>
-        <a href="https://www.instagram.com/sai_gift_travels?utm_source=qr&stkn=bW5nd3pzaXpuYzJs" target="_blank"
+        <a href="https://www.instagram.com/sai_gift_travels?utm_source=qr&stkn=bW5nd3pzaXpuYzJs" target="_blank" rel="noopener noreferrer"
           class="btn btn--instagram"
           style="width: 100%; text-align: center; display: flex; align-items: center; justify-content: center; gap: 0.6rem;">
           <img src="assets/images/instagram.svg" alt="Instagram" class="btn-logo-img" />
           INSTAGRAM
         </a>
-        <a href="https://youtube.com/@saigifttravels?si=pi73zh91jaSxFoKr" target="_blank" class="btn btn--youtube"
+        <a href="https://youtube.com/@saigifttravels?si=pi73zh91jaSxFoKr" target="_blank" rel="noopener noreferrer" class="btn btn--youtube"
           style="width: 100%; text-align: center; display: flex; align-items: center; justify-content: center; gap: 0.6rem;">
           <img src="assets/images/youtube.svg" alt="YouTube" class="btn-logo-img" />
           YOUTUBE CHANNEL
@@ -230,7 +230,7 @@
               Customized holiday and pilgrimage tour packages to Rameswaram, Kanyakumari, Kodaikanal, Munnar, and Ooty
               at unbeatable prices.
             </p>
-            <a href="#destinations" class="service-card__btn">EXPLORE PACKAGES →</a>
+            <a href="#gallery" class="service-card__btn">EXPLORE PACKAGES →</a>
           </div>
 
           <!-- Service 5 -->
@@ -282,6 +282,7 @@
     <!-- ============================================================
          PHOTO GALLERY
          ============================================================ -->
+    <span id="destinations" style="position:relative;top:-90px;display:block;visibility:hidden;"></span>
     <section id="gallery" class="gallery section">
       <div class="container">
         <div class="section-header reveal-up">
@@ -490,11 +491,11 @@
 
     <!-- Lightbox -->
     <div class="lightbox" id="lightbox" hidden>
-      <button class="lightbox__close" id="lightboxClose">×</button>
-      <button class="lightbox__nav prev" id="lightboxPrev">‹</button>
-      <button class="lightbox__nav next" id="lightboxNext">›</button>
-      <img src="" alt="" class="lightbox__img" id="lightboxImg" />
-      <div class="lightbox__counter" id="lightboxCounter">1 / 6</div>
+      <button class="lightbox__close" id="lightboxClose" aria-label="Close Lightbox">×</button>
+      <button class="lightbox__nav prev" id="lightboxPrev" aria-label="Previous Image">‹</button>
+      <button class="lightbox__nav next" id="lightboxNext" aria-label="Next Image">›</button>
+      <img src="" alt="Gallery Preview" class="lightbox__img" id="lightboxImg" />
+      <div class="lightbox__counter" id="lightboxCounter">1 / 15</div>
     </div>
 
     <!-- ============================================================
@@ -599,7 +600,7 @@
               <div class="contact-success-check">✓</div>
               <h3>Thank You!</h3>
               <p>Your message has been sent successfully. S.P. Nirmal Pandi will get back to you shortly.</p>
-              <a href="https://wa.me/917904900899" target="_blank" class="contact-success-wa"
+              <a href="https://wa.me/917904900899" target="_blank" rel="noopener noreferrer" class="contact-success-wa"
                 style="display: inline-flex; align-items: center; gap: 0.6rem;">
                 <img src="assets/images/whatsapp.svg" alt="WhatsApp" style="width: 20px; height: 20px;" />
                 Chat on WhatsApp (+91 7904900899)
@@ -643,20 +644,20 @@
       <div class="footer__links">
         <a href="tel:7904900899">📞 7904900899</a>
         <a href="tel:9362652174">📞 9362652174</a>
-        <a href="https://wa.me/917904900899" target="_blank" class="footer__brand-link">
+        <a href="https://wa.me/917904900899" target="_blank" rel="noopener noreferrer" class="footer__brand-link">
           <img src="assets/images/whatsapp.svg" alt="WhatsApp" class="footer-logo-img" /> WhatsApp
         </a>
         <a href="mailto:nirmalpandi87@gmail.com" class="footer__brand-link">
           <img src="assets/images/email.svg" alt="Email" class="footer-logo-img" /> Email
         </a>
-        <a href="https://www.facebook.com/share/1XkweLXCxv/" target="_blank" class="footer__brand-link">
+        <a href="https://www.facebook.com/share/1XkweLXCxv/" target="_blank" rel="noopener noreferrer" class="footer__brand-link">
           <img src="assets/images/facebook.svg" alt="Facebook" class="footer-logo-img" /> Facebook
         </a>
-        <a href="https://www.instagram.com/sai_gift_travels?utm_source=qr&stkn=bW5nd3pzaXpuYzJs" target="_blank"
+        <a href="https://www.instagram.com/sai_gift_travels?utm_source=qr&stkn=bW5nd3pzaXpuYzJs" target="_blank" rel="noopener noreferrer"
           class="footer__brand-link">
           <img src="assets/images/instagram.svg" alt="Instagram" class="footer-logo-img" /> Instagram
         </a>
-        <a href="https://youtube.com/@saigifttravels?si=pi73zh91jaSxFoKr" target="_blank" class="footer__brand-link">
+        <a href="https://youtube.com/@saigifttravels?si=pi73zh91jaSxFoKr" target="_blank" rel="noopener noreferrer" class="footer__brand-link">
           <img src="assets/images/youtube.svg" alt="YouTube" class="footer-logo-img" /> YouTube
         </a>
       </div>
@@ -675,7 +676,7 @@
   <!-- Firebase App & Firestore SDKs -->
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
-  <script src="script.js?v=3.0"></script>
+  <script src="script.js?v=4.0"></script>
 </body>
 
 </html>
